@@ -92,6 +92,8 @@ export const metadata = {
   category: "Marketing",
 };
 
+import ChatWidget from "@/app/components/ChatWidget";
+
 export default function RootLayout({ children }) {
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -176,6 +178,7 @@ export default function RootLayout({ children }) {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
           />
           {children}
+          <ChatWidget />
         </ThemeProvider>
       </body>
     </html>

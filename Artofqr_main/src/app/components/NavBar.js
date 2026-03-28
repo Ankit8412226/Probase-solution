@@ -99,14 +99,8 @@ function NavBar() {
             </nav>
 
             <div className="flex items-center gap-3">
-              <div className="hidden xl:flex items-center gap-3">
+              <div className="flex items-center gap-4">
                 <ModeToggle />
-                <button
-                  onClick={() => router.push("/contact")}
-                  className="px-5 py-2.5 text-sm rounded-full border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-200 font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer whitespace-nowrap"
-                >
-                  Let&apos;s Connect
-                </button>
                 <button
                   onClick={handleButtonClick}
                   className="group relative flex items-center gap-2 px-6 py-2.5 text-sm rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden cursor-pointer whitespace-nowrap"
@@ -152,15 +146,7 @@ function NavBar() {
                   {item.name}
                 </div>
               ))}
-              <button
-                onClick={() => {
-                  setMenu(false);
-                  router.push("/contact");
-                }}
-                className="mt-4 w-full py-4 rounded-xl border border-gray-200 dark:border-gray-800 text-gray-900 dark:text-white font-bold text-lg flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer"
-              >
-                Let&apos;s Connect
-              </button>
+
               <button
                 onClick={handleButtonClick}
                 className="group relative w-full py-4 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden cursor-pointer"

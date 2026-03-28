@@ -14,7 +14,7 @@ export const companyProfile = {
     "To help businesses grow digitally with innovative marketing strategies, modern website solutions, and result-driven online promotion.",
   founder: "Anjali Chaurasia",
   address: "SH-12 Greater Noida West, U.P.",
-  email: "anjali@probasesolution.com",
+  email: "info@probasesolution.com",
   phones: ["+91 93548 69067", "+91 88004 31115"],
   gst: "09AUIPC4772H1ZH",
   website: "https://www.probasesolution.com",
