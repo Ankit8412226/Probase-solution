@@ -105,10 +105,10 @@ export default function AboutSection() {
               <strong>{companyProfile.name}</strong> is a dedicated digital marketing and web development firm designed to help ambitious businesses capture more of their market. We fuse bespoke brand positioning with high-powered SEO, aggressive paid advertising, and conversion-optimized websites to construct a digital presence that refuses to be ignored.
             </p>
 
-            <div className="flex justify-center flex-col sm:flex-row gap-5 lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-5 items-center justify-center lg:justify-start">
               <button
                 onClick={() => router.push("/contact")}
-                className="group relative px-10 py-5 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold text-lg shadow-[0_10px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_20px_40px_rgba(255,255,255,0.15)] transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                className="group relative w-full sm:w-auto px-10 py-5 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold text-lg shadow-[0_10px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_20px_40px_rgba(255,255,255,0.15)] transition-all duration-300 hover:-translate-y-1 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <span className="relative flex items-center justify-center gap-3 group-hover:text-white transition-colors">
@@ -133,11 +133,11 @@ export default function AboutSection() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileHover={{ y: -5 }}
-                  className="relative group bg-gray-50 dark:bg-gray-900/50 border border-gray-100 dark:border-gray-800 rounded-3xl p-8 text-left overflow-hidden transition-shadow hover:shadow-2xl"
+                  className="relative group bg-gray-50 dark:bg-gray-900/50 border border-gray-100 dark:border-gray-800 rounded-3xl p-8 text-center sm:text-left overflow-hidden transition-shadow hover:shadow-2xl"
                 >
                   <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${stat.color} opacity-10 rounded-full blur-[40px] group-hover:opacity-30 transition-opacity duration-500`} />
                   
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${stat.color} p-0.5 mb-6 shadow-lg`}>
+                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${stat.color} p-0.5 mb-6 mx-auto sm:mx-0 shadow-lg`}>
                     <div className="w-full h-full bg-white dark:bg-gray-950 rounded-[10px] flex items-center justify-center">
                       <Icon className="w-6 h-6 text-gray-900 dark:text-white" />
                     </div>

@@ -74,8 +74,9 @@ export default function WhyChooseUsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="flex flex-col items-center xl:items-start"
           >
-            <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-purple-200 dark:border-purple-800 bg-purple-50 dark:bg-purple-900/30">
+            <div className="inline-flex items-center justify-center gap-2 mb-6 px-4 py-2 rounded-full border border-purple-200 dark:border-purple-800 bg-purple-50 dark:bg-purple-900/30">
               <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
               <span className="text-sm font-semibold text-purple-700 dark:text-purple-300 tracking-wide uppercase">Why Choose Us</span>
             </div>
@@ -100,11 +101,11 @@ export default function WhyChooseUsSection() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileHover={{ y: -8 }}
-                  className="group relative bg-gray-50 dark:bg-gray-900/50 border border-gray-100 dark:border-gray-800 p-8 rounded-[2rem] overflow-hidden transition-all duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] text-left"
+                  className="group relative bg-gray-50 dark:bg-gray-900/50 border border-gray-100 dark:border-gray-800 p-8 rounded-[2rem] overflow-hidden transition-all duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] text-center sm:text-left"
                 >
                   <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
                   
-                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 bg-gradient-to-br ${gradient} shadow-lg shadow-purple-500/20 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 mx-auto sm:mx-0 bg-gradient-to-br ${gradient} shadow-lg shadow-purple-500/20 group-hover:scale-110 transition-transform duration-300`}>
                     <Icon className="w-7 h-7 text-white" />
                   </div>
                   

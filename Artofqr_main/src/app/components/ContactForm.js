@@ -88,7 +88,7 @@ export default function ContactSection() {
             {/* Phone Card */}
             <div className="group bg-gray-50/80 dark:bg-gray-900/40 border border-gray-100 dark:border-gray-800 p-8 rounded-[2rem] hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] transition-all duration-300 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 dark:bg-purple-600/20 rounded-full blur-[40px] group-hover:bg-purple-500/20 transition-colors duration-500" />
-              <div className="flex items-start gap-6 relative z-10">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 sm:gap-6 relative z-10">
                 <div className="w-14 h-14 rounded-2xl bg-white dark:bg-gray-800 shadow-md flex items-center justify-center shrink-0 border border-gray-100 dark:border-gray-700 group-hover:scale-110 transition-transform duration-300">
                   <Phone className="w-6 h-6 text-purple-600 dark:text-purple-400" />
                 </div>
@@ -102,7 +102,7 @@ export default function ContactSection() {
             {/* Email Card */}
             <div className="group bg-gray-50/80 dark:bg-gray-900/40 border border-gray-100 dark:border-gray-800 p-8 rounded-[2rem] hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] transition-all duration-300 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 dark:bg-blue-600/20 rounded-full blur-[40px] group-hover:bg-blue-500/20 transition-colors duration-500" />
-              <div className="flex items-start gap-6 relative z-10">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 sm:gap-6 relative z-10">
                 <div className="w-14 h-14 rounded-2xl bg-white dark:bg-gray-800 shadow-md flex items-center justify-center shrink-0 border border-gray-100 dark:border-gray-700 group-hover:scale-110 transition-transform duration-300">
                   <Mail className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                 </div>
@@ -121,7 +121,7 @@ export default function ContactSection() {
             {/* Location Card */}
             <div className="group bg-gray-50/80 dark:bg-gray-900/40 border border-gray-100 dark:border-gray-800 p-8 rounded-[2rem] hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] transition-all duration-300 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 dark:bg-cyan-600/20 rounded-full blur-[40px] group-hover:bg-cyan-500/20 transition-colors duration-500" />
-              <div className="flex items-start gap-6 relative z-10">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 sm:gap-6 relative z-10">
                 <div className="w-14 h-14 rounded-2xl bg-white dark:bg-gray-800 shadow-md flex items-center justify-center shrink-0 border border-gray-100 dark:border-gray-700 group-hover:scale-110 transition-transform duration-300">
                   <MapPin className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />
                 </div>

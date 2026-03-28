@@ -40,10 +40,10 @@ const HeroSection = () => {
           }}
         >
           {/* LEFT CONTENT */}
-          <motion.div className="order-1 lg:order-1 text-left md:text-center lg:text-left relative z-10">
+          <motion.div className="order-1 lg:order-1 text-center lg:text-left relative z-10">
             <motion.div
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 dark:bg-white/5 backdrop-blur-md border border-gray-200 dark:border-white/10 mb-8 shadow-sm md:mx-auto lg:mx-0"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 dark:bg-white/5 backdrop-blur-md border border-gray-200 dark:border-white/10 mb-8 shadow-sm mx-auto lg:mx-0"
             >
               <Sparkles size={16} className="text-purple-600 dark:text-purple-400" />
               <span className="text-sm font-medium text-gray-800 dark:text-gray-200">
@@ -63,30 +63,29 @@ const HeroSection = () => {
             </motion.h1>
 
             <motion.p
-              className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-xl md:mx-auto lg:mx-0 leading-relaxed"
+              className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed"
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
             >
               {companyProfile.heroDescription}
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 md:justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start"
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
             >
               <button
                 onClick={handleBookDemo}
-                className="group relative px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden cursor-pointer"
+                className="group relative w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden cursor-pointer"
               >
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <span className="relative flex items-center gap-2 group-hover:text-black transition-colors">
+                <span className="relative flex items-center justify-center gap-2 group-hover:text-black transition-colors">
                   {companyProfile.primaryCta} <ArrowRight size={18} />
                 </span>
               </button>
 
               <button
                 onClick={handleDiscover}
-                className="px-8 py-4 rounded-full  bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10  text-gray-900 dark:text-white font-semibold flex items-center justify-center gap-2 cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1
-                hover:bg-gradient-to-r from-purple-600 to-blue-600 hover:text-white "
+                className="w-full sm:w-auto px-8 py-4 rounded-full bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white font-semibold flex items-center justify-center gap-2 cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-gradient-to-r from-purple-600 to-blue-600 hover:text-white"
               >
                 View Services
               </button>
