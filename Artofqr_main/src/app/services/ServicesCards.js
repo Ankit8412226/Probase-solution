@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowUpRight,
   BadgePercent,
@@ -31,51 +31,67 @@ const iconMap = {
 
 export default function ServicesCards() {
   return (
-    <section className="pb-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 cursor-pointer">
+    <section className="pb-32 relative">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 xl:px-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {serviceCatalog.map((service, i) => {
           const Icon = iconMap[service.slug] || Globe;
 
           return (
-            <motion.article
+            <motion.div
               key={service.slug}
-              whileHover={{ y: -6 }}
-              className="group relative overflow-hidden rounded-[28px] border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 md:p-7 shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_rgba(109,68,250,0.14)] transition-all duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              whileHover={{ y: -8 }}
+              className="group relative h-full flex flex-col"
             >
-              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#941DFB] via-[#5B5CFB] to-[#265BFB]" />
+              {/* Outer Glow Effect */}
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-[2.5rem] opacity-0 group-hover:opacity-30 blur-2xl transition-opacity duration-500" />
+              
+              <div className="relative flex-1 flex flex-col bg-white/70 dark:bg-gray-950/70 backdrop-blur-2xl border border-white dark:border-gray-800 rounded-[2.5rem] p-8 shadow-xl overflow-hidden">
+                {/* Accent Gradient Border (Internal) */}
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-purple-600 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
 
-              <div className="flex items-start justify-between gap-4 mb-8">
-                <div className="inline-flex items-center gap-2 rounded-full border border-purple-200/80 dark:border-purple-800 bg-purple-50 dark:bg-purple-900/20 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.28em] text-purple-700 dark:text-purple-300">
-                  Service
+                <div className="flex items-start justify-between mb-8">
+                  <div className="p-4 rounded-2xl bg-gradient-to-br from-purple-600/10 to-blue-600/10 border border-purple-200/50 dark:border-purple-800/50 group-hover:scale-110 transition-transform duration-500">
+                    <Icon size={28} className="text-purple-600 dark:text-purple-400" />
+                  </div>
+                  <div className="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 border border-gray-200/50 dark:border-gray-700/50">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                      Service {String(i + 1).padStart(2, '0')}
+                    </span>
+                  </div>
                 </div>
 
-                <div className="shrink-0 p-4 rounded-2xl bg-gradient-to-br from-[#941DFB] to-[#265BFB] shadow-lg group-hover:scale-105 transition-transform">
-                  <Icon size={22} className="text-white" />
+                <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white group-hover:text-purple-600 transition-colors">
+                  {service.title}
+                </h3>
+                
+                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-auto">
+                  {service.shortDescription}
+                </p>
+
+                <div className="pt-8 mt-8 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="flex items-center gap-2 text-sm font-bold text-gray-900 dark:text-white group/btn"
+                  >
+                    View Details
+                    <AnimatePresence>
+                      <motion.span 
+                        className="w-8 h-8 rounded-full bg-purple-600 text-white flex items-center justify-center group-hover/btn:translate-x-1 transition-transform"
+                      >
+                        <ArrowUpRight size={18} />
+                      </motion.span>
+                    </AnimatePresence>
+                  </Link>
                 </div>
+                
+                {/* Card Background Patterns */}
+                <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-purple-600/5 rounded-full blur-3xl group-hover:bg-purple-600/10 transition-colors" />
               </div>
-
-              <h2 className="text-2xl font-semibold mb-3 max-w-[14ch]">{service.title}</h2>
-
-              <p className="text-sm text-gray-600 dark:text-gray-300 flex-1 min-h-[72px]">
-                {service.shortDescription}
-              </p>
-
-              <div className="pt-5 mt-8 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
-                <span className="text-xs font-medium uppercase tracking-[0.24em] text-gray-400 dark:text-gray-500">
-                  Explore
-                </span>
-
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="group/link inline-flex items-center gap-2 text-sm font-medium text-black dark:text-white"
-                >
-                  Read More
-                  <span className="w-8 h-8 rounded-full flex items-center justify-center bg-[#6F44FB] text-white transition-transform duration-300 group-hover/link:translate-x-1">
-                    <ArrowUpRight size={16} />
-                  </span>
-                </Link>
-              </div>
-            </motion.article>
+            </motion.div>
           );
         })}
       </div>

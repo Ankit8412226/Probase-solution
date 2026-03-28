@@ -3,21 +3,18 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { Check } from "lucide-react";
+import { Check, Rocket, TrendingUp, Building2, ArrowRight } from "lucide-react";
 
 export default function PricingSection() {
   const router = useRouter();
   const [activeCard, setActiveCard] = useState("growth");
-  const [expanded, setExpanded] = useState({});
-
-  const defaultHeight = 480;
-  const activeHeight = 600;
 
   const cards = [
     {
       id: "starter",
-      name: "Starter",
-      price: "Custom",
+      name: "Startup Foundations",
+      tagline: "Build your digital base",
+      icon: Rocket,
       bullets: [
         "Built for local businesses getting started",
         "Focused website or campaign foundation",
@@ -29,9 +26,10 @@ export default function PricingSection() {
     },
     {
       id: "growth",
-      name: "Growth",
+      name: "Growth Acceleration",
+      tagline: "Scale your presence",
       featured: true,
-      price: "Quote",
+      icon: TrendingUp,
       bullets: [
         "Monthly digital marketing execution",
         "Social media and creative support",
@@ -43,8 +41,9 @@ export default function PricingSection() {
     },
     {
       id: "performance",
-      name: "Performance",
-      price: "Quote",
+      name: "Enterprise Scale",
+      tagline: "Dominate your market",
+      icon: Building2,
       bullets: [
         "Multi-channel campaign support",
         "Paid ads plus conversion input",
@@ -56,156 +55,130 @@ export default function PricingSection() {
     },
   ];
 
-  const toggleExpand = (id) => {
-    setExpanded((prev) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
-    setActiveCard(id);
-  };
-
   return (
-    <section id="pricing" className="w-full relative overflow-hidden py-24 lg:py-28">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
-        <div className="text-center mb-12">
-          <p className="inline-block px-6 py-1 rounded-full text-base font-medium border border-blue-500/40 dark:border-blue-400/40 text-blue-500 dark:text-blue-400 mb-4">
-            Pricing
-          </p>
+    <section id="pricing" className="w-full relative overflow-hidden py-24 lg:py-32 bg-white dark:bg-black">
+      {/* Background Lighting */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full -z-10 pointer-events-none opacity-20">
+        <div className="absolute top-[20%] left-[10%] w-[600px] h-[600px] bg-purple-500/10 blur-[150px] rounded-full" />
+        <div className="absolute bottom-[20%] right-[10%] w-[600px] h-[600px] bg-blue-500/10 blur-[150px] rounded-full" />
+      </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent dark:from-purple-400 dark:to-blue-300 leading-tight mb-4">
-            Choose the Engagement That Fits Your Growth Stage
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 xl:px-24 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100/50 dark:bg-blue-900/20 border border-blue-200/50 dark:border-blue-800/50 mb-6"
+          >
+            <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+            <span className="text-[10px] font-bold uppercase tracking-widest text-blue-700 dark:text-blue-300">
+              Custom Solutions
+            </span>
+          </motion.div>
+
+          <h2 className="text-4xl md:text-6xl font-bold leading-tight mb-6 text-gray-900 dark:text-white">
+            Flexible Engagement <br className="hidden md:block" />
+            <span className="bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
+              Tailored to Your Goals
+            </span>
           </h2>
 
-          <p className="max-w-xl mx-auto text-gray-600 dark:text-gray-300">
-            We tailor scopes for business size, service mix, and campaign intensity rather than forcing one fixed package.
+          <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+            We don&apos;t believe in fixed packages. We design custom scopes based on your industry, goals, and growth stage.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
-          {cards.map((c) => {
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+          {cards.map((c, i) => {
+            const Icon = c.icon;
             const isActive = activeCard === c.id;
-            const isExpanded = !!expanded[c.id];
-            const visibleBullets = isExpanded ? c.bullets : c.bullets.slice(0, 6);
 
             return (
               <motion.div
                 key={c.id}
-                layout
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
                 onMouseEnter={() => setActiveCard(c.id)}
-                onMouseLeave={() => setActiveCard("growth")}
-                transition={{ type: "spring", stiffness: 220, damping: 22 }}
-                className="relative rounded-3xl overflow-hidden flex flex-col p-7 md:p-8 border backdrop-blur-xl cursor-pointer bg-white/40 border-gray-300 text-gray-800 shadow-[0_8px_24px_rgba(0,0,0,0.05)] dark:bg-gray-900/50 dark:border-gray-800 dark:text-white self-start"
-                style={{
-                  minHeight: isActive || isExpanded ? activeHeight : defaultHeight,
-                  transformOrigin: "top",
-                  boxShadow: isActive
-                    ? "0 32px 70px -15px rgba(0,0,0,0.55)"
-                    : "0 12px 25px -10px rgba(0,0,0,0.25)",
-                  transform: isActive ? "translateY(-6px) scale(1.02)" : "translateY(0) scale(1)",
-                  transition: "transform 0.25s ease, box-shadow 0.25s ease",
-                }}
+                className="group relative h-full flex flex-col"
               >
-                {(c.featured || isActive) && (
-                  <div className="pointer-events-none absolute inset-x-0 -top-10 h-44">
-                    <div
-                      style={{
-                        background:
-                          "radial-gradient(450px 160px at 50% 0%, rgba(124,58,237,0.26), rgba(59,130,246,0.15) 25%, transparent 60%)",
-                        filter: "blur(32px)",
-                      }}
-                      className="w-full h-full"
-                    />
-                  </div>
-                )}
+                {/* Outer Glow */}
+                <div className={`absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-[3rem] transition-opacity duration-500 blur-2xl ${isActive ? 'opacity-30' : 'opacity-0'}`} />
+                
+                <div className={`relative flex-1 flex flex-col h-full rounded-[3rem] p-8 md:p-10 border transition-all duration-500 overflow-hidden ${
+                  isActive 
+                  ? 'bg-white dark:bg-gray-950 border-purple-500/50 shadow-2xl scale-[1.02]' 
+                  : 'bg-white/50 dark:bg-white/[0.02] border-gray-100 dark:border-white/5 shadow-sm'
+                }`}>
+                  
+                  {/* Internal Lighting */}
+                  <div className={`absolute -top-24 -right-24 w-48 h-48 rounded-full blur-[80px] transition-opacity duration-500 ${isActive ? 'bg-purple-600/20' : 'bg-transparent'}`} />
 
-                <div className="z-10 space-y-3">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">{c.name}</h3>
-
-                    {c.featured && (
-                      <span className="text-xs px-2 py-1 rounded-full bg-purple-600 text-white">
-                        Popular
-                      </span>
-                    )}
-                  </div>
-
-                  <div className="mt-6 mb-4">
-                    <div className="flex items-end gap-3">
-                      <div className="text-4xl font-extrabold text-gray-900 dark:text-white">
-                        {c.price}
+                  <div className="relative z-10 flex flex-col h-full">
+                    <div className="flex items-center justify-between mb-8">
+                      <div className={`p-4 rounded-2xl bg-gradient-to-br from-purple-600/10 to-blue-600/10 border border-purple-100/50 dark:border-purple-900/30`}>
+                        <Icon size={32} className="text-purple-600 dark:text-purple-400" />
                       </div>
+                      {c.featured && (
+                        <div className="px-3 py-1 rounded-full bg-purple-600 text-white text-[10px] font-bold uppercase tracking-widest">
+                          Recommended
+                        </div>
+                      )}
                     </div>
 
-                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-2">
-                      Final scope depends on business goals, channels, and delivery format.
-                    </div>
-                  </div>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                      {c.name}
+                    </h3>
+                    <p className="text-purple-600 dark:text-purple-400 text-sm font-semibold mb-8">
+                      {c.tagline}
+                    </p>
 
-                  <div className="mt-2">
-                    <button
-                      onClick={() => router.push("/contact")}
-                      className={`relative inline-flex items-center justify-center w-full px-6 py-3 rounded-lg font-semibold transition-all overflow-hidden cursor-pointer ${
-                        isActive
-                          ? "bg-gradient-to-r from-purple-600 to-blue-500 text-white shadow-lg"
-                          : "bg-white border border-gray-300 text-gray-800 dark:bg-transparent dark:border-gray-600/40 dark:text-white"
-                      }`}
-                    >
-                      <span className="relative z-10 flex items-center">Request pricing →</span>
-                    </button>
+                    <ul className="space-y-4 mb-12 flex-1">
+                      {c.bullets.map((bullet, idx) => (
+                        <li key={idx} className="flex gap-3 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                          <Check size={18} className="text-blue-500 shrink-0 mt-0.5" />
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="pt-8 border-t border-gray-100 dark:border-white/5">
+                      <button
+                        onClick={() => router.push("/contact")}
+                        className={`group relative flex items-center justify-center gap-2 w-full py-4 rounded-2xl font-bold transition-all duration-300 ${
+                          isActive 
+                          ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg hover:shadow-purple-500/25' 
+                          : 'bg-gray-900 dark:bg-white text-white dark:text-black hover:scale-[1.02]'
+                        }`}
+                      >
+                        Request Custom Proposal 
+                        <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+                      </button>
+                    </div>
                   </div>
                 </div>
-
-                <AnimatePresence initial={false}>
-                  <motion.ul
-                    key={isExpanded ? `expanded-${c.id}` : `collapsed-${c.id}`}
-                    layout
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.25 }}
-                    className="space-y-2.5 md:space-y-3 mt-4 pb-2"
-                  >
-                    {visibleBullets.map((b, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-start gap-3 text-gray-700 dark:text-gray-200 text-[15px]"
-                      >
-                        <Check size={16} className="text-blue-400 mt-1" />
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </motion.ul>
-                </AnimatePresence>
-
-                {c.bullets.length > 6 && (
-                  <button
-                    onClick={() => toggleExpand(c.id)}
-                    className="text-sm font-medium text-blue-500 dark:text-blue-400 mt-2 mb-4"
-                  >
-                    {isExpanded ? "− Read Less" : `+ ${c.bullets.length - 6} More Features`}
-                  </button>
-                )}
-
-                <div
-                  className="pointer-events-none absolute -left-20 -bottom-20 w-72 h-72 rounded-full blur-3xl opacity-70"
-                  style={{
-                    background:
-                      "radial-gradient(circle at 30% 30%, rgba(124,58,237,0.18), rgba(59,130,246,0.10) 40%, transparent 70%)",
-                  }}
-                />
               </motion.div>
             );
           })}
         </div>
 
-        <div className="text-left pl-6 mt-12 space-y-2">
-          <p className="text-gray-700 dark:text-gray-300 text-base">
-            Pricing is customized according to service mix, campaign size, and execution timeline.
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className="mt-20 p-8 rounded-[2rem] bg-gray-50 dark:bg-white/[0.02] border border-gray-100 dark:border-white/5 text-center"
+        >
+          <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed">
+            Need something completely bespoke? <br className="md:hidden" />
+            <button 
+              onClick={() => router.push("/contact")}
+              className="font-bold text-purple-600 dark:text-purple-400 hover:underline"
+            >
+              Contact us for a Custom Enterprise Workshop.
+            </button>
           </p>
-          <p className="text-gray-700 dark:text-gray-300 text-base">
-            Contact us for the latest package details tailored to your business requirements.
-          </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

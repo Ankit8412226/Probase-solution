@@ -1,20 +1,14 @@
 "use client";
-import React from "react";
+
+import React, { useState, useEffect } from "react";
 import Marquee from "react-fast-marquee";
-import { useState, useEffect } from "react";
+import { Star, Quote, CheckCircle2 } from "lucide-react";
+import { motion } from "framer-motion";
 import { testimonials } from "@/content/proBaseSolution";
 
-/**
- * TestimonialsMarquee (updated card styling)
- * - Card now matches the dark glass / rounded / inner-stroke style from the first image.
- * - Kept marquee behavior, responsiveness and content identical.
- */
-
 const TestimonialsMarquee = () => {
-  // State to track if we're in mobile view
   const [isMobile, setIsMobile] = useState(false);
 
-  // Effect to detect viewport size changes
   useEffect(() => {
     if (typeof window === "undefined") return;
     const checkIfMobile = () => setIsMobile(window.innerWidth < 768);
@@ -24,150 +18,127 @@ const TestimonialsMarquee = () => {
   }, []);
 
   return (
-    <div className="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-left md:text-center mb-8 lg:mb-16">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent dark:from-purple-400 dark:to-blue-300">
-            Trusted by Businesses That Need Real Results
-          </h1>
-          <p className="text-sm sm:text-base lg:text-normal text-gray-700 dark:text-gray-300 mt-4 w-full">
-            Feedback inspired by the categories and campaign work we support across healthcare, real estate, wellness, automobile, and e-commerce.
+    <section className="py-24 relative overflow-hidden bg-white dark:bg-black">
+      {/* Background Lighting */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full -z-10 pointer-events-none opacity-30">
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-purple-500/10 blur-[120px] rounded-full" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/10 blur-[120px] rounded-full" />
+      </div>
+
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 xl:px-24">
+        {/* Header Section */}
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100/50 dark:bg-purple-900/20 border border-purple-200/50 dark:border-purple-800/50 mb-6"
+          >
+            <CheckCircle2 className="w-4 h-4 text-purple-600" />
+            <span className="text-[10px] font-bold uppercase tracking-widest text-purple-700 dark:text-purple-300">
+              Trusted by 120+ Businesses
+            </span>
+          </motion.div>
+          
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6 text-gray-900 dark:text-white">
+            Client Stories & <br className="hidden md:block" />
+            <span className="bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
+              Real Impact
+            </span>
+          </h2>
+          
+          <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+            Don&apos;t just take our word for it. Hear from businesses that have transformed their digital presence with ProBase Solution.
           </p>
         </div>
 
+        {/* Testimonials Display */}
         {isMobile ? (
-          /* Mobile view: Vertical stack */
-          <div className="flex flex-col items-start space-y-6 mx-auto">
+          <div className="flex flex-col gap-6">
             {testimonials.map((testimonial) => (
-              <TestimonialCard
-                key={testimonial.id}
-                testimonial={testimonial}
-                isMobile={true}
-              />
+              <TestimonialCard key={testimonial.id} testimonial={testimonial} />
             ))}
           </div>
         ) : (
-          /* Desktop view: Marquee animation */
-          <div
-            className="flex items-center justify-center mx-auto overflow-hidden relative py-8"
-            style={{ width: "90%" }}
-          >
-            {/* left gradient fade */}
-            {/* <div className="absolute h-full w-28 top-0 left-0 bottom-0 bg-gradient-to-r from-black/90 to-transparent z-10 pointer-events-none"></div> */}
-
-            <div className="w-full">
-              <Marquee gradient={false} speed={24} className="py-2 z-0" pauseOnHover={true}>
-                {[...testimonials, ...testimonials].map((testimonial, index) => (
-                  <TestimonialCard
-                    key={`${testimonial.id}-${index}`}
-                    testimonial={testimonial}
-                    isMobile={false}
-                  />
-                ))}
-              </Marquee>
-            </div>
-
-            {/* right gradient fade */}
-            {/* <div className="absolute h-full w-28 top-0 right-0 bottom-0 bg-gradient-to-l from-black/90 to-transparent z-10 pointer-events-none"></div> */}
+          <div className="relative">
+            {/* Edge Fades */}
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white dark:from-black to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white dark:from-black to-transparent z-10 pointer-events-none" />
+            
+            <Marquee speed={35} pauseOnHover gradient={false}>
+              {[...testimonials, ...testimonials].map((testimonial, idx) => (
+                <div key={`${testimonial.id}-${idx}`} className="mx-4">
+                  <TestimonialCard testimonial={testimonial} />
+                </div>
+              ))}
+            </Marquee>
           </div>
         )}
       </div>
-    </div>
+    </section>
   );
 };
 
-function TestimonialCard({ testimonial, isMobile }) {
+function TestimonialCard({ testimonial }) {
+  const initials = testimonial.author.split(" ").map(n => n[0]).slice(0, 2).join("");
+  const avatarSeed = encodeURIComponent(testimonial.author);
+
   return (
-    <div
-      className={`group relative flex-shrink-0 ${isMobile ? "w-full mx-0" : "mx-6"} transition-all duration-500 cursor-pointer`}
-      style={{
-        width: isMobile ? "100%" : "360px",
-        height: isMobile ? "auto" : "420px",
-        maxWidth: isMobile ? "520px" : "none",
-      }}
+    <motion.div
+      whileHover={{ y: -5 }}
+      className="group relative w-full md:w-[400px] h-full"
     >
-      {/* Card background (dark glass + subtle gradient + texture overlay) */}
-      <div
-        className="rounded-2xl overflow-hidden h-full transition-all duration-300 bg-gradient-to-br from-purple-500/10 via-transparent to-blue-500/10 dark:from-purple-400/10 dark:via-transparent dark:to-blue-300/10 border border-white/20 dark:border-gray-800/40 shadow-lg dark:shadow-[0_12px_40px_rgba(6,6,12,0.6)]"
-        style={{
-          borderRadius: "22px",
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.boxShadow = "0 0 0 4px rgba(255,255,255,0.3), 0 0 60px rgba(255,255,255,0.4)";
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.boxShadow = "";
-        }}
-      >
-        {/* inner soft bottom highlight to mimic the glowing bottom in reference */}
-        <div
-          className="absolute left-0 right-0 bottom-0 pointer-events-none"
-          style={{
-            height: "36%",
-            background:
-              "linear-gradient(180deg, rgba(255,255,255,0.00) 0%, rgba(124,58,237,0.06) 30%, rgba(124,58,237,0.12) 60%, rgba(0,0,0,0.0) 100%)",
-            filter: "blur(18px)",
-            borderBottomLeftRadius: 22,
-            borderBottomRightRadius: 22,
-          }}
-        />
+      {/* Outer Glow */}
+      <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-[2.5rem] opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500" />
+      
+      <div className="relative h-full bg-white/10 dark:bg-white/[0.03] backdrop-blur-3xl border border-gray-100 dark:border-white/10 rounded-[2.5rem] p-8 shadow-sm flex flex-col justify-between overflow-hidden">
+        {/* Floating Quote Icon */}
+        <div className="absolute top-6 right-8 text-purple-600/10 group-hover:text-purple-600/20 transition-colors">
+          <Quote size={64} fill="currentColor" />
+        </div>
 
-        {/* quote mark top-left (small) */}
-        {/* <div className="absolute -top-3 left-6 z-20 text-[34px] leading-none text-indigo-200/30">“</div> */}
-
-        <div className="relative z-10 flex flex-col h-full">
-          {/* content container with padding (responsive alignment) */}
-          <div className="px-6 pt-6 lg:pt-8 pb-6 flex-grow flex flex-col">
-            {/* Title similar to reference: uppercase small heading at top */}
-            <h4 className="text-center text-base lg:text-lg font-bold tracking-wide text-purple-600 dark:text-purple-300 mb-3 lg:mb-4">
-              CUSTOMER STORY
-            </h4>
-
-            {/* testimonial text (center aligned on all devices) */}
-            <div className={`${isMobile ? "" : "overflow-y-auto"} mt-2 lg:mt-4`}>
-              <p className="text-gray-800 dark:text-gray-200 text-sm leading-relaxed text-center">
-                {testimonial.text}
-              </p>
-            </div>
-
-            {/* avatar circle (center aligned on all devices) */}
-            <div className="flex items-center justify-center mt-4 lg:mt-6">
-              <div
-                className="w-12 h-12 lg:w-14 lg:h-14 rounded-full flex items-center justify-center"
-                style={{
-                  background: "linear-gradient(180deg, rgba(124,58,237,0.18), rgba(59,130,246,0.06))",
-                  boxShadow: "0 6px 20px rgba(99,102,241,0.12) inset",
-                }}
-              >
-                {/* Placeholder initials (could be replaced with <Image> avatar) */}
-                <span className="text-gray-900 dark:text-white/90 font-semibold text-xs lg:text-sm">{testimonial.author.split(" ").map(n=>n[0]).slice(0,2).join("")}</span>
-              </div>
-            </div>
+        <div className="relative z-10">
+          {/* Rating */}
+          <div className="flex gap-1 mb-6">
+            {[...Array(5)].map((_, i) => (
+              <Star
+                key={i}
+                size={16}
+                className={i < testimonial.rating ? "text-blue-500 fill-blue-500" : "text-gray-300 dark:text-gray-700"}
+              />
+            ))}
           </div>
 
-          {/* footer: rating + author (center aligned on all devices) */}
-          <div className="px-6 pb-6 lg:pb-8 pt-2">
-            <div className="flex justify-center mb-3 lg:mb-4">
-              {[...Array(5)].map((_, i) => (
-                <svg
-                  key={i}
-                  className={`h-4 w-4 lg:h-5 lg:w-5 mx-1 ${i < testimonial.rating ? "text-blue-600 dark:text-blue-400" : "text-gray-400 dark:text-gray-700"}`}
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              ))}
-            </div>
+          {/* Testimonial Text */}
+          <p className="text-gray-700 dark:text-gray-300 text-base leading-relaxed mb-8 italic">
+            &quot;{testimonial.text}&quot;
+          </p>
+        </div>
 
-            <div className="text-center">
-              <p className="font-semibold text-gray-900 dark:text-white text-sm lg:text-base">{testimonial.author}</p>
-              <p className="text-xs lg:text-sm text-gray-600 dark:text-gray-300 mt-1">{testimonial.role}</p>
+        {/* User Info */}
+        <div className="flex items-center gap-4 relative z-10 pt-6 border-t border-gray-100/50 dark:border-white/5">
+          <div className="relative">
+            <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-purple-500/20 bg-gradient-to-br from-purple-100 to-blue-100 dark:from-purple-900/20 dark:to-blue-900/20">
+              <img 
+                src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${avatarSeed}`} 
+                alt={testimonial.author}
+                className="w-full h-full object-cover"
+              />
             </div>
+            <div className="absolute -bottom-1 -right-1 bg-green-500 border-2 border-white dark:border-gray-900 w-3.5 h-3.5 rounded-full" />
+          </div>
+          
+          <div>
+            <h4 className="font-bold text-gray-900 dark:text-white text-sm">
+              {testimonial.author}
+            </h4>
+            <p className="text-xs text-purple-600 dark:text-purple-400 font-medium">
+              {testimonial.role}
+            </p>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

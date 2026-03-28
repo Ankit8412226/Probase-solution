@@ -1,108 +1,69 @@
 "use client";
 
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function ServicesBanner() {
   return (
-    <section className="py-24 bg-white dark:bg-gray-950">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        {/* CARD */}
-        <div
-          className="
-            relative
-            bg-gradient-to-r
-            from-[#9616FB]
-            to-[#3459FB]
-            rounded-3xl
-            text-white
-            shadow-xl
-            overflow-visible
-          "
+    <section className="py-24 relative overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 xl:px-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative rounded-[3rem] overflow-hidden bg-gradient-to-br from-purple-600 to-blue-700 shadow-2xl"
         >
-          {/* CONTENT WRAPPER */}
-          <div
-            className="
-              flex
-              flex-col
-              md:flex-row
-              items-center
-              px-8
-              py-14
-              md:px-12
-              md:py-16
-            "
-          >
-            {/* LEFT CONTENT – 50% */}
-            <div className="w-full md:w-1/2 z-10">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
-                Need the right service mix for your business? <br />
-                <span className="text-[#D6CBFF]">Let&apos;s plan it together.</span>
+          {/* Animated Background Textures */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent scale-150" />
+          </div>
+
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between p-8 md:p-16 lg:p-20 gap-12">
+            <div className="w-full md:w-3/5 text-center md:text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6 mx-auto md:mx-0">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-white">
+                  Strategy Session
+                </span>
+              </div>
+              
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                Need the right service mix for your business? <br className="hidden lg:block" />
+                <span className="text-purple-200">Let&apos;s plan it together.</span>
               </h2>
 
-              <p className="text-purple-100 mb-8 text-sm sm:text-base">
+              <p className="text-purple-50/80 text-lg mb-10 max-w-xl leading-relaxed">
                 Tell us what you need help with, and we&apos;ll recommend the right combination of website, SEO, social media, ads, or local visibility support.
               </p>
 
               <Link
-                href="/#contact"
-                className="
-                  inline-flex
-                  items-center
-                  justify-center
-                  px-8
-                  py-3
-                  rounded-full
-                  bg-white/30
-                  backdrop-blur
-                  text-white
-                  font-semibold
-                  hover:bg-white/40
-                  transition
-                "
+                href="/contact"
+                className="group relative inline-flex items-center gap-3 px-10 py-4 rounded-full bg-white text-purple-600 font-bold text-lg shadow-xl hover:shadow-white/20 transition-all duration-300 hover:-translate-y-1"
               >
-                Contact Us
+                Let&apos;s Talk <ArrowRight className="transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
 
-            {/* RIGHT IMAGE SLOT – 50% (space holder only) */}
-            <div className="w-full md:w-1/2" />
+            <div className="w-full md:w-2/5 flex justify-center items-center">
+              <div className="relative w-full max-w-[400px]">
+                 <motion.div 
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    className="relative z-20"
+                 >
+                    <img
+                      src="/images/Service_CTA.png"
+                      alt="Digital Strategist CTA"
+                      className="w-full h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)] rounded-3xl"
+                    />
+                 </motion.div>
+                 
+                 {/* Decorative Glow */}
+                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-white/10 blur-[100px] rounded-full -z-10" />
+              </div>
+            </div>
           </div>
-
-          {/* IMAGE (DESKTOP – does NOT affect card height) */}
-          <img
-            src="/images/Men_Image.svg"
-            alt="CTA Illustration"
-            className="
-              hidden
-              md:block
-              absolute
-              right-2
-              bottom-0
-              w-[380px]
-              lg:w-[480px]
-              pointer-events-none
-              select-none
-            "
-          />
-
-          {/* IMAGE (MOBILE/TABLET – normal flow) */}
-          <img
-  src="/images/Men_Image.svg"
-  alt="CTA Illustration"
-  className="
-    md:hidden
-    mx-auto
-    mt-8
-    w-[70%]          /* fluid base */
-    max-w-[280px]    /* cap on very small phones */
-    sm:w-[60%]
-    sm:max-w-[340px]
-    pointer-events-none
-    select-none
-  "
-/>
-
-        </div>
+        </motion.div>
       </div>
     </section>
   );
