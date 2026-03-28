@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.probasesolution.com/sitemap.xml
+
+# Disallow admin and API routes
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /designer/
+
+# Allow important pages
+Allow: /
+Allow: /services
+Allow: /portfolio
+Allow: /contact
+Allow: /industries
