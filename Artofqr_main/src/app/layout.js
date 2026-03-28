@@ -85,9 +85,9 @@ export const metadata = {
     google: "your-google-verification-code",
   },
   icons: {
-    icon: "/icons/SUHTechLogo (1).svg",
-    shortcut: "/icons/SUHTechLogo (1).svg",
-    apple: "/icons/SUHTechLogo (1).svg",
+    icon: "/ProbaseLogo.jpeg",
+    shortcut: "/ProbaseLogo.jpeg",
+    apple: "/ProbaseLogo.jpeg",
   },
   category: "Marketing",
 };
@@ -98,7 +98,7 @@ export default function RootLayout({ children }) {
     "@type": "Organization",
     name: companyProfile.name,
     url: companyProfile.website,
-    logo: `${companyProfile.website}/icons/SUHTechLogo%20(1).svg`,
+    logo: `${companyProfile.website}/ProbaseLogo.jpeg`,
     description: companyProfile.aboutDescription,
     email: companyProfile.email,
     telephone: companyProfile.phones[0],

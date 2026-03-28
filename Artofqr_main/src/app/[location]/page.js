@@ -87,40 +87,41 @@ export default async function LocationPage({ params }) {
           </p>
         </section>
 
-        <AboutUsSection />
         <ServicesSection />
+        <AboutUsSection />
+        <WhyChooseUsSection />
+        
         <Project />
-        <Ecosystem />
 
-        <section className="relative py-12 md:py-16 lg:py-20 overflow-hidden rounded-3xl bg-gray-900 text-white">
+        <section className="relative py-12 md:py-16 lg:py-20 overflow-hidden rounded-3xl bg-gray-900 text-white shadow-2xl">
           <div className="absolute inset-0 bg-gradient-to-br from-purple-900/50 to-blue-900/50" />
           <div className="container mx-auto text-center px-6 md:px-8 lg:px-12 relative z-10">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
-              See How We Support Growth Across Industries
+              Our Proven Portfolio & Client Success
             </h2>
             <p className="text-base md:text-lg text-gray-300 mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
-              Explore selected client categories and service examples from healthcare, real estate, wellness, automobile, and e-commerce campaigns.
+              Discover how we've transformed businesses across healthcare, real estate, e-commerce, and technology sectors with our bespoke digital solutions.
             </p>
             <Link
               href="/portfolio"
               className="inline-flex items-center px-6 md:px-8 py-3 md:py-4 rounded-full bg-white text-gray-900 font-bold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 cursor-pointer"
             >
-              View Portfolio Highlights
+              Explore Our Work
             </Link>
           </div>
         </section>
 
+        <Ecosystem />
         <ProcessSection />
-        <PricingSection />
         <IndustriesSection />
+        <PricingSection />
         <TestimonialsPage />
-        <WhyChooseUsSection />
-
-        <section id="contact">
-          <ContactFormSection />
-        </section>
 
         <FAQSection />
+
+        <section id="contact" className="pt-8">
+          <ContactFormSection />
+        </section>
       </div>
 
       <FooterSection />

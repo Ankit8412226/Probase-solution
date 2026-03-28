@@ -30,13 +30,13 @@ export const metadata = {
 
 export default function IndustriesPage() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <main className="min-h-screen bg-background text-foreground pt-20">
       <NavBar />
-      <div className="mt-16 md:mt-20 lg:mt-24">
-        <FoundersVision />
-      </div>
-      <div className="mt-16 md:mt-20 lg:mt-24">
+      <div className="mt-8 md:mt-12 lg:mt-16">
         <IndustriesSection />
+      </div>
+      <div className="mt-16 md:mt-20 lg:mt-24 mb-20">
+        <FoundersVision />
       </div>
       <FooterSection />
     </main>

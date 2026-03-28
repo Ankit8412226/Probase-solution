@@ -40,10 +40,12 @@ function FooterSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 mb-10 md:mb-12">
           {/* Brand Column */}
           <div className="md:col-span-2 lg:col-span-4">
-            <Link href="/" className="inline-block mb-5 sm:mb-6">
-              <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
-                {companyProfile.name}
-              </div>
+            <Link href="/" className="inline-block mb-6 sm:mb-8">
+              <img 
+                src="/ProbaseLogo.jpeg" 
+                alt={`${companyProfile.name} Logo`} 
+                className="max-h-[80px] sm:max-h-[100px] w-auto object-contain rounded-md" 
+              />
             </Link>
             <p className="text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base max-w-md md:mx-auto lg:mx-0 md:text-center lg:text-left">
               {companyProfile.aboutDescription}

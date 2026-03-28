@@ -42,7 +42,7 @@ function NavBar() {
   const toggleMenu = () => setMenu(!menu);
 
   const navItems = [
-    { name: "About Us", href: "/industries" },
+    { name: "About Us", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "Portfolio", href: "/portfolio" },
     { name: "Contact", href: "/contact" },
@@ -66,10 +66,12 @@ function NavBar() {
         <div className="container mx-auto px-4 md:px-6 lg:px-8 xl:px-24 flex justify-between items-center h-20">
           {/* Logo */}
           <div className="relative flex items-center flex-shrink-0">
-            <Link href="/" className="block">
-              <div className="text-xl md:text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
-                {companyProfile.name}
-              </div>
+            <Link href="/" className="block py-1">
+              <img 
+                src="/ProbaseLogo.jpeg" 
+                alt={`${companyProfile.name} Logo`} 
+                className="max-h-[50px] md:max-h-[55px] mt-1 w-auto object-contain rounded-md mix-blend-multiply dark:mix-blend-normal" 
+              />
             </Link>
           </div>
 
