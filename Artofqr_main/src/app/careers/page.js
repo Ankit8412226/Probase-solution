@@ -23,9 +23,6 @@ export const metadata = {
   alternates: {
     canonical: "https://www.suhtech.top/careers",
   },
-  icons: {
-    icon: "/icons/SUHTechLogo (1).svg",
-  },
 };
 
 export default function CareersPage() {

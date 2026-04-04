@@ -6,10 +6,15 @@ export default function sitemap() {
 
   const staticRoutes = [
     "",
+    "/about",
     "/services",
     "/portfolio",
     "/contact",
     "/industries",
+    "/careers",
+    "/insights",
+    "/privacy-policy",
+    "/terms-conditions",
     ...serviceCatalog.map((service) => `/services/${service.slug}`),
   ];
 

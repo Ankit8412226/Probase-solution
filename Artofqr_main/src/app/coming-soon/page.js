@@ -5,9 +5,6 @@ import { ArrowLeft, Clock, Rocket } from "lucide-react";
 export const metadata = {
   title: "Coming Soon | ArtofQR",
   description: "This project is currently under development. Stay tuned!",
-  icons: {
-    icon: "/icons/SUHTechLogo (1).svg",
-  },
 };
 
 export default function ComingSoonPage() {

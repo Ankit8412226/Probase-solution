@@ -84,17 +84,40 @@ export const metadata = {
   verification: {
     google: "your-google-verification-code",
   },
-  icons: {
-    icon: "/ProbaseLogo.jpeg",
-    shortcut: "/ProbaseLogo.jpeg",
-    apple: "/ProbaseLogo.jpeg",
-  },
   category: "Marketing",
 };
 
 import ChatWidget from "@/app/components/ChatWidget";
 
 export default function RootLayout({ children }) {
+  const primarySiteLinks = [
+    {
+      name: "Services",
+      url: `${companyProfile.website}/services`,
+      description: "Explore digital marketing, SEO, ads, and web development services.",
+    },
+    {
+      name: "Portfolio",
+      url: `${companyProfile.website}/portfolio`,
+      description: "Review selected client work and business growth case studies.",
+    },
+    {
+      name: "About Us",
+      url: `${companyProfile.website}/about`,
+      description: "Learn about the company, founder vision, and operating approach.",
+    },
+    {
+      name: "Industries",
+      url: `${companyProfile.website}/industries`,
+      description: "See the industries and business categories the team supports.",
+    },
+    {
+      name: "Contact",
+      url: `${companyProfile.website}/contact`,
+      description: "Get in touch for business enquiries and service consultations.",
+    },
+  ];
+
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -144,14 +167,25 @@ export default function RootLayout({ children }) {
     "@type": "WebSite",
     name: companyProfile.name,
     url: companyProfile.website,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${companyProfile.website}/search?q={search_term_string}`
-      },
-      "query-input": "required name=search_term_string"
-    }
+    description: companyProfile.heroDescription,
+    inLanguage: "en-IN",
+    publisher: {
+      "@type": "Organization",
+      name: companyProfile.name,
+      url: companyProfile.website,
+    },
+  };
+
+  const siteNavigationSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: primarySiteLinks.map((link, index) => ({
+      "@type": "SiteNavigationElement",
+      position: index + 1,
+      name: link.name,
+      description: link.description,
+      url: link.url,
+    })),
   };
 
   return (
@@ -176,6 +210,11 @@ export default function RootLayout({ children }) {
             id="website-structured-data"
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+          />
+          <Script
+            id="site-navigation-structured-data"
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationSchema) }}
           />
           {children}
           <ChatWidget />

@@ -23,9 +23,6 @@ export const metadata = {
   alternates: {
     canonical: `${companyProfile.website}/industries`,
   },
-  icons: {
-    icon: "/icons/SUHTechLogo (1).svg",
-  },
 };
 
 export default function IndustriesPage() {

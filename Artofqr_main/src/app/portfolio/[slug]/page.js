@@ -441,7 +441,6 @@ export async function generateMetadata({ params }) {
     return {
       title: "Portfolio | SUH Tech Private Limited",
       description: "Web application development and DevOps project portfolio by SUH Tech Private Limited.",
-      icons: { icon: "/icons/SUHTechLogo (1).svg" },
       alternates: {
         canonical: `https://www.suhtech.top/portfolio/${slug}`,
       },
@@ -467,7 +466,6 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: `https://www.suhtech.top/portfolio/${slug}`,
     },
-    icons: { icon: "/icons/SUHTechLogo (1).svg" },
   };
 }
 

@@ -22,9 +22,6 @@ export const metadata = {
   alternates: {
     canonical: `${companyProfile.website}/portfolio`,
   },
-  icons: {
-    icon: "/icons/SUHTechLogo (1).svg",
-  },
 };
 
 export default function PortfolioPage() {

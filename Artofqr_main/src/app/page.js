@@ -48,9 +48,6 @@ export const metadata = {
   alternates: {
     canonical: companyProfile.website,
   },
-  icons: {
-    icon: "/icons/SUHTechLogo (1).svg",
-  },
 };
 
 const AboutUsSection = dynamic(() => import("./components/AboutUs"));
