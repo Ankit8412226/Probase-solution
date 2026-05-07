@@ -25,21 +25,23 @@ const poppins = Poppins({
 export const metadata = {
   metadataBase: new URL(companyProfile.website),
   title: {
-    default: `${companyProfile.name} | ${companyProfile.tagline}`,
+    default: `Best Digital Marketing & Web Development Agency in Greater Noida | ${companyProfile.name}`,
     template: `%s | ${companyProfile.name}`,
   },
-  description: companyProfile.aboutDescription,
+  description: "Pro Base Solution is a leading digital marketing company in Greater Noida West. We provide SEO, website development, Meta & Google Ads, and Social Media Marketing for healthcare, real estate, and local businesses.",
   keywords: [
-    "digital marketing company",
-    "web development company",
-    "local seo services",
-    "social media marketing agency",
-    "google business profile optimization",
-    "paid advertising agency",
-    "lead generation campaigns",
-    "content and creative marketing",
-    "greater noida digital marketing",
-    "website development greater noida west",
+    "best digital marketing agency in greater noida",
+    "website development company in noida extension",
+    "seo services greater noida west",
+    "local seo for healthcare noida",
+    "real estate digital marketing agency india",
+    "google business profile optimization noida",
+    "social media marketing for clinics",
+    "pay per click advertising agency noida",
+    "lead generation services for real estate",
+    "e-commerce website developers noida",
+    "digital marketing for automobile showrooms",
+    "spa and wellness marketing noida",
     ...serviceCatalog.map((service) => service.title.toLowerCase()),
   ],
   authors: [{ name: companyProfile.name }],
@@ -61,21 +63,21 @@ export const metadata = {
     locale: "en_US",
     url: companyProfile.website,
     siteName: companyProfile.name,
-    title: `${companyProfile.name} | ${companyProfile.tagline}`,
-    description: companyProfile.heroDescription,
+    title: `Leading Digital Marketing & Web Growth Agency | ${companyProfile.name}`,
+    description: "Empower your local brand with expert SEO, high-converting websites, and precision advertising. Specializing in healthcare, real estate, and local service growth.",
     images: [
       {
         url: `${companyProfile.website}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: `${companyProfile.name} digital growth services`,
+        alt: `${companyProfile.name} Digital Marketing Services`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${companyProfile.name} | ${companyProfile.tagline}`,
-    description: companyProfile.heroDescription,
+    title: `Grow Your Local Brand with ${companyProfile.name}`,
+    description: "Expert digital marketing and web development services to scale your business in Greater Noida and beyond.",
     images: [`${companyProfile.website}/og-image.jpg`],
   },
   alternates: {
@@ -84,7 +86,7 @@ export const metadata = {
   verification: {
     google: "your-google-verification-code",
   },
-  category: "Marketing",
+  category: "Digital Marketing",
 };
 
 import ChatWidget from "@/app/components/ChatWidget";
@@ -107,11 +109,6 @@ export default function RootLayout({ children }) {
       description: "Learn about the company, founder vision, and operating approach.",
     },
     {
-      name: "Industries",
-      url: `${companyProfile.website}/industries`,
-      description: "See the industries and business categories the team supports.",
-    },
-    {
       name: "Contact",
       url: `${companyProfile.website}/contact`,
       description: "Get in touch for business enquiries and service consultations.",
@@ -121,71 +118,46 @@ export default function RootLayout({ children }) {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: companyProfile.name,
-    url: companyProfile.website,
-    logo: `${companyProfile.website}/ProbaseLogo.jpeg`,
-    description: companyProfile.aboutDescription,
-    email: companyProfile.email,
-    telephone: companyProfile.phones[0],
-    founder: companyProfile.founder,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: companyProfile.address,
-      addressLocality: "Greater Noida West",
-      addressRegion: "Uttar Pradesh",
-      addressCountry: "IN",
-    },
-    makesOffer: serviceCatalog.map((service) => ({
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        name: service.title,
-      },
-    })),
-  };
-
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: companyProfile.name,
-    image: `${companyProfile.website}/og-image.jpg`,
-    url: companyProfile.website,
-    telephone: companyProfile.phones[0],
-    email: companyProfile.email,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: companyProfile.address,
-      addressLocality: "Greater Noida West",
-      addressRegion: "Uttar Pradesh",
-      addressCountry: "IN",
-    },
-    description: companyProfile.heroDescription,
+    "@id": `${companyProfile.website}/#organization`,
+    "name": companyProfile.name,
+    "url": companyProfile.website,
+    "logo": `${companyProfile.website}/ProbaseLogo.jpeg`,
+    "description": companyProfile.aboutDescription,
+    "sameAs": [
+      "https://www.facebook.com/probasesolution",
+      "https://www.instagram.com/probasesolution",
+      "https://www.linkedin.com/company/pro-base-solution"
+    ]
   };
 
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: companyProfile.name,
-    url: companyProfile.website,
-    description: companyProfile.heroDescription,
-    inLanguage: "en-IN",
-    publisher: {
-      "@type": "Organization",
-      name: companyProfile.name,
-      url: companyProfile.website,
-    },
+    "@id": `${companyProfile.website}/#website`,
+    "url": companyProfile.website,
+    "name": companyProfile.name,
+    "publisher": { "@id": `${companyProfile.website}/#organization` },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": `${companyProfile.website}/search?q={search_term_string}`,
+      "query-input": "required name=search_term_string"
+    }
   };
 
-  const siteNavigationSchema = {
+  const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "ItemList",
-    itemListElement: primarySiteLinks.map((link, index) => ({
-      "@type": "SiteNavigationElement",
-      position: index + 1,
-      name: link.name,
-      description: link.description,
-      url: link.url,
-    })),
+    "@type": "ProfessionalService",
+    "name": companyProfile.name,
+    "image": `${companyProfile.website}/ProbaseLogo.jpeg`,
+    "url": companyProfile.website,
+    "telephone": companyProfile.phones[0],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": companyProfile.address,
+      "addressLocality": "Greater Noida West",
+      "addressRegion": "Uttar Pradesh",
+      "addressCountry": "IN"
+    }
   };
 
   return (
@@ -195,26 +167,17 @@ export default function RootLayout({ children }) {
       className={`${geistMono.variable} ${inter.variable} ${poppins.variable}`}
     >
       <body>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light" forcedTheme="light" enableSystem={false}>
           <Script
-            id="organization-structured-data"
+            id="structured-data"
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-          />
-          <Script
-            id="local-business-structured-data"
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-          />
-          <Script
-            id="website-structured-data"
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-          />
-          <Script
-            id="site-navigation-structured-data"
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationSchema) }}
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify([
+                organizationSchema,
+                websiteSchema,
+                localBusinessSchema
+              ])
+            }}
           />
           {children}
           <ChatWidget />

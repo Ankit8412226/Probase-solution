@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { ArrowRight, Trophy, Users, Lightbulb, Rocket } from "lucide-react";
 import { companyProfile } from "@/content/proBaseSolution";
 
-const heroImagePath = "/download (2) 1.svg";
+const heroImagePath = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2670&auto=format&fit=crop";
 
 const stats = [
   { icon: Trophy, value: "5+", label: "Core Industries Served", color: "from-amber-500 to-orange-500" },

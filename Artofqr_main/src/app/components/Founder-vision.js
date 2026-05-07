@@ -28,7 +28,7 @@ const FoundersVision = () => {
   const router = useRouter();
 
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-br from-purple-500/10 via-transparent to-blue-500/10 dark:from-purple-400/10 dark:via-transparent dark:to-blue-300/10 text-slate-900 dark:text-slate-50">
+    <section className="relative w-full overflow-hidden bg-gradient-to-br from-indigo-500/10 via-transparent to-violet-500/10 dark:from-indigo-400/10 dark:via-transparent dark:to-violet-300/10 text-slate-900 dark:text-slate-50">
       <motion.div
         className="relative h-[55vh] min-h-[380px] w-full"
         initial={{ opacity: 0 }}
@@ -66,7 +66,7 @@ const FoundersVision = () => {
               animate="visible"
             >
               Founders'
-              <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500 bg-clip-text text-transparent animate-gradient">
+              <span className="bg-gradient-to-r from-amber-500 via-rose-500 to-violet-600 bg-clip-text text-transparent animate-gradient">
                 {" "}Vision
               </span>
             </motion.h1>
@@ -98,7 +98,7 @@ const FoundersVision = () => {
             <div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6">
                 Building Digital Solutions <br />
-                <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500 bg-clip-text text-transparent animate-gradient">
+                <span className="bg-gradient-to-r from-amber-500 via-rose-500 to-violet-600 bg-clip-text text-transparent animate-gradient">
                   That Bring Business Results
                 </span>
               </h2>
@@ -110,7 +110,7 @@ const FoundersVision = () => {
             <div className="flex justify-center">
               <div className="relative w-full max-w-md aspect-[4/3] rounded-2xl overflow-hidden shadow-xl shadow-slate-900/15 dark:shadow-black/40">
                 <Image
-                  src="/Building-solutuion.svg"
+                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2670&auto=format&fit=crop"
                   alt="Team collaborating at whiteboard"
                   fill
                   className="object-cover"
@@ -179,7 +179,7 @@ const FoundersVision = () => {
             <div className="flex justify-center order-1 lg:order-none">
               <div className="relative w-full max-w-md aspect-[4/3] rounded-2xl overflow-hidden shadow-xl shadow-slate-900/15 dark:shadow-black/40">
                 <Image
-                  src="/Looking ahead.svg"
+                  src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2671&auto=format&fit=crop"
                   alt="Looking ahead"
                   fill
                   className="object-cover"
@@ -188,7 +188,7 @@ const FoundersVision = () => {
             </div>
 
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6 bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent dark:from-purple-400 dark:to-blue-300 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6 bg-gradient-to-r from-amber-500 via-rose-500 to-violet-600 bg-clip-text text-transparent leading-tight">
                 Looking Ahead
               </h2>
               <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-xl">
@@ -200,14 +200,14 @@ const FoundersVision = () => {
           <motion.section variants={fadeUp} className="pb-4">
             <div className="rounded-2xl bg-slate-100 dark:bg-slate-900/70 px-6 sm:px-10 py-10 sm:py-12 text-center shadow-sm border border-slate-200/80 dark:border-slate-800">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
-                Build Your Next <span className="bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent dark:from-purple-400 dark:to-blue-300">Growth Step</span>
+                Build Your Next <span className="bg-gradient-to-r from-amber-500 via-rose-500 to-violet-600 bg-clip-text text-transparent">Growth Step</span>
               </h2>
               <p className="mt-6 max-w-xl mx-auto text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
                 If your business needs stronger digital visibility, better campaigns, or a sharper online presence, let&apos;s plan the right move.
               </p>
               <button
                 onClick={() => router.push("/contact")}
-                className="group relative mt-6 inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden cursor-pointer"
+                className="group relative mt-6 inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden cursor-pointer"
               >
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span className="relative flex items-center gap-2 group-hover:text-black transition-colors">

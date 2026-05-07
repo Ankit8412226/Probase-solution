@@ -70,11 +70,11 @@ export default function TechStackSection() {
       {/* Animated Background Elements with Parallax */}
       <motion.div
         style={{ y: y1, opacity }}
-        className="absolute top-[10%] left-[5%] w-72 h-72 rounded-full bg-purple-500/10 dark:bg-purple-500/20 blur-[100px] pointer-events-none"
+        className="absolute top-[10%] left-[5%] w-72 h-72 rounded-full bg-indigo-500/10 dark:bg-indigo-500/20 blur-[100px] pointer-events-none"
       />
       <motion.div
         style={{ y: y2, opacity }}
-        className="absolute bottom-[10%] right-[5%] w-96 h-96 rounded-full bg-blue-500/10 dark:bg-blue-500/20 blur-[120px] pointer-events-none"
+        className="absolute bottom-[10%] right-[5%] w-96 h-96 rounded-full bg-violet-500/10 dark:bg-violet-500/20 blur-[120px] pointer-events-none"
       />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
@@ -96,15 +96,7 @@ export default function TechStackSection() {
             Technologies
           </motion.p>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-6xl font-medium leading-tight bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent dark:from-purple-400 dark:to-blue-300 mb-4"
-          >
-            Proven Platforms & Tooling
-          </motion.h2>
+          {/* Heading Removed */}
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}

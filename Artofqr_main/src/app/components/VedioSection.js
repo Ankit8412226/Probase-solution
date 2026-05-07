@@ -137,7 +137,7 @@ function AboutWithVideoSection() {
                             <span>Watch the Studio Reel</span>
                           </div>
                         }
-                        className="w-full sm:w-auto h-12 flex items-center justify-center gap-2 shadow-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 dark:from-blue-600 dark:to-purple-500 transition-all duration-300 cursor-pointer"
+                        className="w-full sm:w-auto h-12 flex items-center justify-center gap-2 shadow-lg bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 transition-all duration-300 cursor-pointer"
                       />
                     </motion.div>
                   </motion.div>
@@ -166,7 +166,7 @@ function AboutWithVideoSection() {
                 >
                   <div className="relative w-full h-[250px] sm:h-[300px] md:h-[250px] lg:h-[300px] overflow-hidden rounded-xl shadow-2xl border">
                     <Image
-                      src="/images/about_img.png"
+                      src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2670&auto=format&fit=crop"
                       alt="ArtofQR delivery studio"
                       fill
                       className="object-cover"

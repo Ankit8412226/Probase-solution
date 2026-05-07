@@ -1,6 +1,6 @@
 "use client";
 
-import ModeToggle from "@/components/ModeToggle";
+
 import { companyProfile } from "@/content/proBaseSolution";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, Menu, X } from "lucide-react";
@@ -100,10 +100,10 @@ function NavBar() {
 
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-4">
-                <ModeToggle />
+
                 <button
                   onClick={handleButtonClick}
-                  className="group relative flex items-center gap-2 px-6 py-2.5 text-sm rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden cursor-pointer whitespace-nowrap"
+                  className="group relative flex items-center gap-2 px-6 py-2.5 text-sm rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden cursor-pointer whitespace-nowrap"
                 >
                   <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <span className="relative flex items-center gap-2 group-hover:text-black transition-colors">
@@ -116,7 +116,7 @@ function NavBar() {
 
           {/* Mobile/Tablet Menu Toggle */}
           <div className="flex xl:hidden items-center gap-4">
-            <ModeToggle />
+
             <button
               onClick={toggleMenu}
               className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
@@ -149,7 +149,7 @@ function NavBar() {
 
               <button
                 onClick={handleButtonClick}
-                className="group relative w-full py-4 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden cursor-pointer"
+                className="group relative w-full py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden cursor-pointer"
                 aria-label="Book Demo"
               >
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

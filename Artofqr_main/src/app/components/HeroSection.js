@@ -16,14 +16,14 @@ const HeroSection = () => {
   const handleDiscover = () => router.push("/services");
 
   // right-side blue hero image (local)
-  const heroImg = "/images/hero-website-growth.png";
+  const heroImg = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop";
 
   return (
     <section id="hero" className="relative w-full overflow-hidden pt-8 md:pt-12 pb-12 md:pb-16 lg:pb-20">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-purple-500/20 blur-[120px] animate-pulse" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-blue-500/20 blur-[120px] animate-pulse delay-1000" />
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-indigo-500/20 blur-[120px] animate-pulse" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-violet-500/20 blur-[120px] animate-pulse delay-1000" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,7 +56,7 @@ const HeroSection = () => {
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
             >
               Grow Local, <br />
-              <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500 bg-clip-text text-transparent animate-gradient">
+              <span className="bg-gradient-to-r from-indigo-600 via-violet-600 to-fuchsia-500 bg-clip-text text-transparent animate-gradient">
                 Build Digital Trust
               </span> <br />
               & Convert More Leads.
@@ -75,7 +75,7 @@ const HeroSection = () => {
             >
               <button
                 onClick={handleBookDemo}
-                className="group relative w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden cursor-pointer"
+                className="group relative w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden cursor-pointer"
               >
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span className="relative flex items-center justify-center gap-2 group-hover:text-black transition-colors">
@@ -85,7 +85,7 @@ const HeroSection = () => {
 
               <button
                 onClick={handleDiscover}
-                className="w-full sm:w-auto px-8 py-4 rounded-full bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white font-semibold flex items-center justify-center gap-2 cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-gradient-to-r from-purple-600 to-blue-600 hover:text-white"
+                className="w-full sm:w-auto px-8 py-4 rounded-full bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white font-semibold flex items-center justify-center gap-2 cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-gradient-to-r from-indigo-600 to-violet-600 hover:text-white"
               >
                 View Services
               </button>

@@ -2,16 +2,16 @@ export const companyProfile = {
   name: "Pro Base Solution",
   legalName: "Pro Base Solution",
   shortName: "PBS",
-  tagline: "Complete Digital Marketing & Web Development Company",
-  heroBadge: "Digital Marketing & Web Growth",
-  heroTitle: "Grow your local brand with better visibility, stronger campaigns, and websites that convert.",
+  tagline: "Best Digital Marketing Agency in Greater Noida West | Web Development Company",
+  heroBadge: "Digital Growth Partner in Noida Extension",
+  heroTitle: "Accelerate Your Business with the Best Digital Marketing Company in Greater Noida West.",
   heroDescription:
-    "Pro Base Solution helps healthcare, real estate, automobile, spa, wellness, and e-commerce businesses build a stronger digital presence through strategy, content, ads, SEO, and mobile-friendly websites.",
-  aboutHeading: "Professional digital marketing built for local business growth.",
+    "Pro Base Solution is your trusted partner for SEO, high-performance Website Development, and ROI-driven Meta/Google Ads. We specialize in scaling healthcare, real estate, automobile showrooms, wellness centers, and e-commerce brands in Noida, Delhi NCR, and across India.",
+  aboutHeading: "Comprehensive Digital Marketing & SEO Services in Noida Extension.",
   aboutDescription:
-    "Pro Base Solution is a digital marketing and web development company dedicated to helping businesses attract more customers online. We combine brand positioning, social media, SEO, paid ads, Google Business Profile optimization, and conversion-focused websites to turn digital attention into real enquiries and sales.",
+    "As a leading digital marketing agency in Greater Noida West, Pro Base Solution delivers measurable growth through strategic SEO, custom web development, and precision advertising. We help local businesses in Noida and Delhi NCR dominate search results and convert traffic into revenue.",
   mission:
-    "To help businesses grow digitally with innovative marketing strategies, modern website solutions, and result-driven online promotion.",
+    "To empower businesses with result-oriented digital marketing strategies, modern web solutions, and data-driven growth models.",
   founder: "Anjali Chaurasia",
   address: "SH-12 Greater Noida West, U.P.",
   email: "info@probasesolution.com",
@@ -22,9 +22,9 @@ export const companyProfile = {
   secondaryCta: "View Services",
   portfolioIntro:
     "Selected work across healthcare, real estate, spa, wellness, automobile, and e-commerce brands.",
-  seoHeading: "Digital Marketing Support for Local Businesses Across Greater Noida and Beyond",
+  seoHeading: "Top-Rated Digital Marketing Agency in Greater Noida West & Noida Extension",
   seoDescription:
-    "We help local brands strengthen search visibility, improve social media engagement, and build websites that support lead generation. Our work is especially aligned with clinics, property businesses, wellness brands, automotive businesses, and online sellers.",
+    "Looking for SEO services or website development in Greater Noida? Pro Base Solution offers tailored digital marketing solutions for real estate, clinics, hospitals, spas, and showrooms. We focus on Local SEO, Google Business Profile optimization, and lead generation campaigns that deliver actual ROI.",
 };
 
 export const serviceCatalog = [

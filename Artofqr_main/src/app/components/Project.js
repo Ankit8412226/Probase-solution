@@ -105,7 +105,7 @@ export default function Project() {
                         >
                             <div className="aspect-[4/3] relative">
                                 <Image
-                                    src="/images/Why choose us.png"
+                                    src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2670&auto=format&fit=crop"
                                     alt="Healthcare marketing and clinic growth support"
                                     fill
                                     className="object-cover"
