@@ -211,7 +211,7 @@ const FoundersVision = () => {
               >
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span className="relative flex items-center gap-2 group-hover:text-black transition-colors">
-                  Talk To Us
+                  Connect Now
                   <ArrowRight className="w-4 h-4" />
                 </span>
               </button>

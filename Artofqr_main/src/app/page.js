@@ -57,14 +57,12 @@ const IndustriesSection = dynamic(() => import("./components/IndustriesSection")
 const TestimonialsPage = dynamic(() => import("./components/Testimonial"));
 const ContactFormSection = dynamic(() => import("./components/ContactForm"));
 const FAQSection = dynamic(() => import("./components/Faq"));
-const ProjectModal = dynamic(() => import("./components/ProjectModal"));
 const Project = dynamic(() => import("./components/Project"));
 const Foundervision = dynamic(() => import("./components/Founder-vision"));
 
 export default function Home() {
   return (
     <main className="bg-white dark:bg-black selection:bg-purple-500/30">
-      <ProjectModal />
       <NavBar />
 
       <div className="pt-20">

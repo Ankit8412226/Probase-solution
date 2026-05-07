@@ -100,14 +100,13 @@ function NavBar() {
 
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-4">
-
                 <button
                   onClick={handleButtonClick}
                   className="group relative flex items-center gap-2 px-6 py-2.5 text-sm rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden cursor-pointer whitespace-nowrap"
                 >
                   <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <span className="relative flex items-center gap-2 group-hover:text-black transition-colors">
-                    Get Proposal <ArrowRight className="w-4 h-4" />
+                    Free Audit <ArrowRight className="w-4 h-4" />
                   </span>
                 </button>
               </div>
@@ -154,7 +153,7 @@ function NavBar() {
               >
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span className="relative flex items-center justify-center gap-2 group-hover:text-black transition-colors">
-                  Get Proposal <ArrowRight size={20} />
+                  Free Audit <ArrowRight size={20} />
                 </span>
               </button>
             </div>

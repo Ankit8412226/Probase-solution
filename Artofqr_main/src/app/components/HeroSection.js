@@ -79,7 +79,7 @@ const HeroSection = () => {
               >
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span className="relative flex items-center justify-center gap-2 group-hover:text-black transition-colors">
-                  {companyProfile.primaryCta} <ArrowRight size={18} />
+                  Get Free Audit <ArrowRight size={18} />
                 </span>
               </button>
 

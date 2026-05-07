@@ -118,29 +118,7 @@ function AboutWithVideoSection() {
                     organic traffic that compounds month after month.
                   </motion.p>
 
-                  <motion.div className="mt-2 sm:mt-4" variants={fadeUp}>
-                    <motion.div
-                      whileHover={{
-                        scale: 1.05,
-                        boxShadow: "0px 10px 25px rgba(0, 0, 0, 0.15)",
-                        transition: {
-                          type: "spring",
-                          stiffness: 400,
-                          damping: 20,
-                        },
-                      }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <Button
-                        text={
-                          <div className="flex items-center justify-center gap-2">
-                            <span>Watch the Studio Reel</span>
-                          </div>
-                        }
-                        className="w-full sm:w-auto h-12 flex items-center justify-center gap-2 shadow-lg bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 transition-all duration-300 cursor-pointer"
-                      />
-                    </motion.div>
-                  </motion.div>
+                  {/* Button Removed */}
                 </div>
               </motion.div>
 
@@ -473,32 +451,7 @@ function AboutWithVideoSection() {
                 pod—PM, UX, engineering, QA, DevOps, and SEO riding the same
                 sprint cadence.
               </motion.p>
-              <motion.div
-                className="mt-2 sm:mt-4 relative z-10"
-                variants={fadeUp}
-              >
-                <motion.div
-                  whileHover={{
-                    scale: 1.05,
-                    boxShadow: "0px 10px 25px rgba(0, 0, 0, 0.3)",
-                    transition: { type: "spring", stiffness: 400, damping: 20 },
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Button
-                    onClick={handleButtonClick}
-                    text={
-                      <div className="flex items-center justify-center gap-2">
-                        <Sparkles size={18} />
-                        <span className="text-gray-800 dark:text-gray-100">
-                          Plan a Workshop
-                        </span>
-                      </div>
-                    }
-                    className="w-full sm:w-auto h-12 flex items-center justify-center gap-2 shadow-lg bg-white text-purple-600 border-4 border-white hover:bg-gray-50 font-semibold px-8 rounded-lg transition-all duration-300 dark:bg-gray-900 dark:text-purple-300 dark:border-gray-700 dark:hover:bg-gray-800"
-                  />
-                </motion.div>
-              </motion.div>
+              {/* CTA Button Removed */}
             </motion.div>
           </div>
         </motion.div>
