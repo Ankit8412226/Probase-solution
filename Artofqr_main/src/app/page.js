@@ -51,14 +51,12 @@ export const metadata = {
 
 const AboutUsSection = dynamic(() => import("./components/AboutUs"));
 const ServicesSection = dynamic(() => import("./components/ServicesSection"));
-const ProcessSection = dynamic(() => import("./components/ProcessSection"));
 const PricingSection = dynamic(() => import("./components/PricingSection"));
 const IndustriesSection = dynamic(() => import("./components/IndustriesSection"));
 const TestimonialsPage = dynamic(() => import("./components/Testimonial"));
 const ContactFormSection = dynamic(() => import("./components/ContactForm"));
 const FAQSection = dynamic(() => import("./components/Faq"));
 const Project = dynamic(() => import("./components/Project"));
-const Foundervision = dynamic(() => import("./components/Founder-vision"));
 
 export default function Home() {
   return (
@@ -95,8 +93,6 @@ export default function Home() {
         </section>
 
         <IndustriesSection />
-        <Foundervision />
-        <ProcessSection />
         <AboutUsSection />
         <TestimonialsPage />
         <PricingSection />

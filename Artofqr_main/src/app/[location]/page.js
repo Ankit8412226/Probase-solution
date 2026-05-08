@@ -12,7 +12,6 @@ import WhyChooseUsSection from "../components/WhyChooseUs";
 
 const AboutUsSection = dynamic(() => import("../components/AboutUs"));
 const ServicesSection = dynamic(() => import("../components/ServicesSection"));
-const ProcessSection = dynamic(() => import("../components/ProcessSection"));
 const PricingSection = dynamic(() => import("../components/PricingSection"));
 const IndustriesSection = dynamic(() => import("../components/IndustriesSection"));
 const TestimonialsPage = dynamic(() => import("../components/Testimonial"));
@@ -112,7 +111,6 @@ export default async function LocationPage({ params }) {
         </section>
 
         <Ecosystem />
-        <ProcessSection />
         <IndustriesSection />
         <PricingSection />
         <TestimonialsPage />
