@@ -1,5 +1,5 @@
 "use client";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, Linkedin, Instagram, Facebook } from "lucide-react";
 import Link from "next/link";
 import { companyProfile, serviceCatalog } from "@/content/proBaseSolution";
 
@@ -28,6 +28,16 @@ function FooterSection() {
         { name: "All Services", href: "/services" },
       ],
     },
+    {
+      title: "NCR Locations",
+      links: [
+        { name: "IT Services Delhi", href: "/it-services-delhi" },
+        { name: "Digital Marketing Noida", href: "/digital-marketing-noida" },
+        { name: "Web Dev Gurgaon", href: "/website-development-gurgaon" },
+        { name: "AI Dev Noida Extension", href: "/ai-development-company-noida-extension" },
+        { name: "CRM Software Delhi", href: "/crm-software-delhi" },
+      ],
+    },
   ];
 
   return (
@@ -45,6 +55,7 @@ function FooterSection() {
                 src="/ProbaseLogo.jpeg" 
                 alt={`${companyProfile.name} Logo`} 
                 className="max-h-[80px] sm:max-h-[100px] w-auto object-contain rounded-md" 
+                loading="lazy"
               />
             </Link>
             <p className="text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base max-w-md md:mx-auto lg:mx-0 md:text-center lg:text-left">
@@ -69,7 +80,7 @@ function FooterSection() {
           </div>
 
           {/* Links Columns */}
-          <div className="md:col-span-2 lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-10">
+          <div className="md:col-span-2 lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 lg:gap-10">
             {footerLinks.map((section, index) => (
               <div key={index} className="md:text-center lg:text-left">
                 <h3 className="font-semibold sm:font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 text-sm sm:text-base">
@@ -111,6 +122,19 @@ function FooterSection() {
               >
                 Terms of Service
               </Link>
+            </div>
+            
+            {/* Social Media Link Group */}
+            <div className="flex items-center gap-4 mt-3 sm:mt-0">
+              <a href="https://www.linkedin.com/company/probasesolution" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" aria-label="LinkedIn">
+                <Linkedin size={18} />
+              </a>
+              <a href="https://www.instagram.com/probasesolution" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-pink-600 dark:hover:text-pink-400 transition-colors" aria-label="Instagram">
+                <Instagram size={18} />
+              </a>
+              <a href="https://www.facebook.com/probasesolution" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-800 dark:hover:text-blue-600 transition-colors" aria-label="Facebook">
+                <Facebook size={18} />
+              </a>
             </div>
           </div>
         </div>

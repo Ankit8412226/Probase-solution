@@ -6,21 +6,23 @@ import ServicesHero from "./ServicesHero";
 import { companyProfile } from "@/content/proBaseSolution";
 
 export const metadata = {
-  title: `Services | ${companyProfile.name}`,
+  title: `IT Services, Custom Software & Digital Marketing Services Delhi Noida | ${companyProfile.name}`,
   description:
-    "Explore Pro Base Solution services across website development, SEO, social media marketing, paid advertising, Google Business Profile optimization, e-commerce listings, lead generation, and creative marketing.",
+    "Explore Pro Base Solution's service catalog: Custom Software Development, Web Applications, Enterprise IT Support, SEO, Meta/Google Ads, and Social Media Marketing in Delhi NCR.",
   keywords: [
-    "digital marketing services",
-    "website development services",
-    "seo services",
-    "social media marketing",
-    "paid advertising",
-    "google business profile optimization",
-    "content marketing services",
+    "it services Delhi NCR",
+    "custom software development Noida",
+    "web application development Delhi",
+    "digital marketing services Delhi Noida",
+    "best software development company Noida",
+    "website development services Greater Noida",
+    "seo services Noida Extension",
+    "crm development company",
+    "saas development agency"
   ],
   openGraph: {
-    title: `Services | ${companyProfile.name}`,
-    description: "Digital marketing and website growth services tailored for local businesses.",
+    title: `IT Services, Custom Software & Digital Marketing | ${companyProfile.name}`,
+    description: "Digital transformation, web development, custom software, and marketing solutions tailored for businesses.",
     url: `${companyProfile.website}/services`,
   },
   alternates: {

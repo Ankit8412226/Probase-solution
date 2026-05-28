@@ -25,11 +25,30 @@ const poppins = Poppins({
 export const metadata = {
   metadataBase: new URL(companyProfile.website),
   title: {
-    default: `Best Digital Marketing & Web Development Agency in Greater Noida | ${companyProfile.name}`,
+    default: `Best IT Services, Custom Software & Digital Marketing Agency in Delhi Noida | ${companyProfile.name}`,
     template: `%s | ${companyProfile.name}`,
   },
-  description: "Pro Base Solution is a leading digital marketing company in Greater Noida West. We provide SEO, website development, Meta & Google Ads, and Social Media Marketing for healthcare, real estate, and local businesses.",
+  description: "Pro Base Solution is a leading IT services and digital marketing company in Greater Noida West & Noida. We specialize in custom software development, web app development, SEO, and Meta/Google Ads to rank your business on top.",
   keywords: [
+    // Delhi Noida IT Services & Software Focus
+    "it services company in delhi",
+    "it services in noida",
+    "custom software development company delhi",
+    "software development company in noida",
+    "web app development company delhi",
+    "web application development company noida",
+    "custom software developers delhi ncr",
+    "enterprise software solutions noida",
+    "crm development company delhi",
+    "erp software development noida",
+    "saas product development company india",
+    "it solutions provider greater noida",
+    "it consulting services delhi ncr",
+    "managed it services noida",
+    "software company in greater noida",
+    "it company in noida extension",
+
+    // Digital Marketing & Web Dev Localized
     "best digital marketing agency in greater noida",
     "website development company in noida extension",
     "seo services greater noida west",
@@ -42,6 +61,8 @@ export const metadata = {
     "e-commerce website developers noida",
     "digital marketing for automobile showrooms",
     "spa and wellness marketing noida",
+    
+    // Core Service Mappings
     ...serviceCatalog.map((service) => service.title.toLowerCase()),
   ],
   authors: [{ name: companyProfile.name }],
@@ -63,21 +84,21 @@ export const metadata = {
     locale: "en_US",
     url: companyProfile.website,
     siteName: companyProfile.name,
-    title: `Leading Digital Marketing & Web Growth Agency | ${companyProfile.name}`,
-    description: "Empower your local brand with expert SEO, high-converting websites, and precision advertising. Specializing in healthcare, real estate, and local service growth.",
+    title: `Leading IT Services, Web App & Custom Software Company | ${companyProfile.name}`,
+    description: "Scale your business with expert custom software engineering, high-performance web applications, ROI-driven SEO, and digital marketing in Delhi, Noida, and across India.",
     images: [
       {
         url: `${companyProfile.website}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: `${companyProfile.name} Digital Marketing Services`,
+        alt: `${companyProfile.name} IT Services & Digital Marketing`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `Grow Your Local Brand with ${companyProfile.name}`,
-    description: "Expert digital marketing and web development services to scale your business in Greater Noida and beyond.",
+    title: `Scale Your Business with ${companyProfile.name} IT Solutions`,
+    description: "Expert IT consulting, custom software development, and digital marketing in Delhi NCR.",
     images: [`${companyProfile.website}/og-image.jpg`],
   },
   alternates: {
@@ -86,7 +107,7 @@ export const metadata = {
   verification: {
     google: "your-google-verification-code",
   },
-  category: "Digital Marketing",
+  category: "IT Services",
 };
 
 import ChatWidget from "@/app/components/ChatWidget";
@@ -96,7 +117,7 @@ export default function RootLayout({ children }) {
     {
       name: "Services",
       url: `${companyProfile.website}/services`,
-      description: "Explore digital marketing, SEO, ads, and web development services.",
+      description: "Explore digital marketing, SEO, custom software, web apps, and IT services.",
     },
     {
       name: "Portfolio",
@@ -126,7 +147,7 @@ export default function RootLayout({ children }) {
     "sameAs": [
       "https://www.facebook.com/probasesolution",
       "https://www.instagram.com/probasesolution",
-      "https://www.linkedin.com/company/pro-base-solution"
+      "https://www.linkedin.com/company/probasesolution"
     ]
   };
 
@@ -157,6 +178,54 @@ export default function RootLayout({ children }) {
       "addressLocality": "Greater Noida West",
       "addressRegion": "Uttar Pradesh",
       "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 28.5355,
+      "longitude": 77.3910
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Noida" },
+      { "@type": "City", "name": "Delhi" },
+      { "@type": "City", "name": "Gurgaon" },
+      { "@type": "City", "name": "Greater Noida" },
+      { "@type": "City", "name": "Faridabad" },
+      { "@type": "City", "name": "Ghaziabad" },
+      { "@type": "Country", "name": "India" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "IT, Custom Software & Digital Marketing Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom Software Development"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Web Application Development"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Digital Marketing & SEO"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Website Development"
+          }
+        }
+      ]
     }
   };
 

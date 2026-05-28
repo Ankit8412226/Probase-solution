@@ -9,9 +9,23 @@ import WhyChooseUsSection from "./components/WhyChooseUs";
 import { companyProfile, serviceCatalog } from "@/content/proBaseSolution";
 
 export const metadata = {
-  title: `Best Digital Marketing Agency in Greater Noida West | SEO & Web Development`,
-  description: `Pro Base Solution is the top-rated digital marketing agency in Greater Noida West, offering expert SEO, custom web development, and Meta Ads for real estate, healthcare, and local businesses.`,
+  title: `Best IT Services, Custom Software & Digital Marketing Agency in Delhi Noida | ${companyProfile.name}`,
+  description: `Pro Base Solution is the premier IT services, custom software development, web app development, and digital marketing agency in Delhi NCR and Noida. Rank on top and grow your business today.`,
   keywords: [
+    // Delhi & Noida IT Focus
+    "it services company in delhi",
+    "it company in noida",
+    "custom software development company delhi",
+    "software development company noida",
+    "web app development company delhi",
+    "web application development noida",
+    "custom software developers delhi ncr",
+    "best digital marketing agency in delhi",
+    "digital marketing agency in noida",
+    "seo services in delhi ncr",
+    "seo company in noida",
+
+    // Localized Web & Ads
     "best digital marketing company in greater noida west",
     "top seo agency in noida extension",
     "website development services in greater noida",
@@ -23,8 +37,8 @@ export const metadata = {
     "local business growth partner noida",
   ],
   openGraph: {
-    title: `Leading Digital Marketing & Web Growth Agency | ${companyProfile.name}`,
-    description: `Expert digital marketing and web development services to scale your business in Greater Noida and beyond.`,
+    title: `Leading IT Services, Web App & Custom Software Company | ${companyProfile.name}`,
+    description: `Expert custom software, web app development, SEO, and digital marketing services to scale your business in Delhi NCR.`,
     url: companyProfile.website,
     siteName: companyProfile.name,
     images: [
@@ -32,7 +46,7 @@ export const metadata = {
         url: `${companyProfile.website}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: `${companyProfile.name} digital marketing services`,
+        alt: `${companyProfile.name} IT Services & Digital Marketing`,
       },
     ],
     locale: "en_US",
@@ -40,8 +54,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `Best Digital Marketing Agency in Greater Noida West`,
-    description: `Scaling businesses through data-driven SEO, ads, and high-performance websites.`,
+    title: `Best IT Services & Custom Software Company in Delhi Noida`,
+    description: `Scaling businesses through custom software, web apps, data-driven SEO, and paid ads.`,
     images: [`${companyProfile.website}/og-image.jpg`],
   },
   alternates: {
@@ -102,29 +116,112 @@ export default function Home() {
           <ContactFormSection />
         </section>
 
-        {/* SEO Optimized Content Section (Visually subtle but SEO rich) */}
-        <section className="py-12 border-t border-gray-100 dark:border-gray-800 opacity-60 hover:opacity-100 transition-opacity">
-          <div className="container mx-auto px-4">
-            <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">Why Pro Base Solution is the Top Digital Marketing Agency in Greater Noida West</h2>
-            <div className="text-sm text-gray-600 dark:text-gray-400 space-y-4 columns-1 md:columns-2 lg:columns-3 gap-8">
-              <p>
-                In the rapidly evolving digital landscape of <strong>Noida Extension</strong> and <strong>Greater Noida West</strong>, businesses need a partner who understands the local market dynamics. Pro Base Solution stands out as the <strong>best digital marketing agency in Greater Noida</strong> by providing comprehensive 360-degree solutions.
+        {/* SEO Optimized Content Section (Premium, 800-1200 Words, Localized) */}
+        <section className="py-20 border-t border-gray-100 dark:border-gray-800 bg-gradient-to-b from-white to-gray-50 dark:from-black dark:to-zinc-950">
+          <div className="container mx-auto px-6 max-w-7xl">
+            <div className="max-w-4xl mx-auto mb-16 text-center">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
+                Enterprise IT Services, Custom Software & Performance Digital Marketing in Delhi NCR
+              </h2>
+              <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                At Pro Base Solution, we deliver business transformation through advanced engineering and data-driven marketing. We serve businesses across Delhi, Noida, Gurgaon, Greater Noida West, and all major cities in India, ensuring that their online footprint is secure, scalable, and ranks at the top.
               </p>
-              <p>
-                Our <strong>SEO services in Greater Noida</strong> are designed to help you rank on the first page of Google for high-intent keywords. Whether you are looking for <strong>Local SEO</strong> to attract customers in Noida or <strong>National SEO</strong> to scale your brand, our experts utilize the latest white-hat techniques.
-              </p>
-              <p>
-                As a premier <strong>website development company in Greater Noida</strong>, we build lightning-fast, mobile-responsive websites that act as a 24/7 sales machine. We specialize in <strong>WordPress development</strong>, <strong>Next.js applications</strong>, and <strong>E-commerce stores</strong> tailored for local businesses.
-              </p>
-              <p>
-                Our expertise extends to <strong>Social Media Marketing (SMM)</strong> and <strong>Meta Ads</strong>. We manage Facebook and Instagram campaigns that generate high-quality leads for <strong>Real Estate projects</strong> and <strong>Healthcare clinics</strong>.
-              </p>
-              <p>
-                We serve a variety of industries including <strong>Real Estate</strong>, <strong>Healthcare (Clinics & Hospitals)</strong>, <strong>Automobile Showrooms</strong>, <strong>Spa & Wellness centers</strong>, and <strong>E-commerce sellers</strong> looking to optimize their <strong>Amazon/Flipkart listings</strong>.
-              </p>
-              <p>
-                Located in the heart of <strong>Greater Noida West (UP)</strong>, we are committed to being the <strong>growth partner</strong> your business deserves. From <strong>Google Business Profile optimization</strong> to <strong>PPC advertising</strong>, we ensure your brand gets the visibility it deserves.
-              </p>
+            </div>
+
+            <div className="space-y-12 max-w-5xl mx-auto text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed">
+              {/* Section 1: IT Services Delhi */}
+              <div className="p-8 rounded-2xl bg-white dark:bg-zinc-900 border border-gray-100 dark:border-zinc-800 shadow-sm">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-purple-600 dark:text-purple-400">
+                  Managed IT Services in Delhi: Enhancing Security & Cloud Performance
+                </h3>
+                <p className="mb-4">
+                  In today's digital economy, reliable business operations depend heavily on network security, server uptime, and cloud connectivity. Pro Base Solution stands as the premier provider of custom <strong>IT services in Delhi</strong>, catering to modern startups, mid-market enterprises, and corporate offices. Our managed solutions are engineered to maximize system availability, secure intellectual properties, and enable seamless enterprise scaling.
+                </p>
+                <p className="mb-4">
+                  We specialize in design and deployment of advanced cloud topologies on Amazon Web Services (AWS), Google Cloud Platform (GCP), and Microsoft Azure. Our certified cloud consultants in Delhi NCR help brands implement secure virtual private networks (VPNs) for remote teams, automated database backups, database replication, and zero-trust firewall configurations.
+                </p>
+                <ul className="list-disc pl-5 space-y-2 text-sm text-gray-500">
+                  <li><strong>Managed IT Support:</strong> 24/7 server monitoring, patch management, and helpdesk support.</li>
+                  <li><strong>Cloud Infrastructure Consulting:</strong> Automated container orchestration using Kubernetes and Docker.</li>
+                  <li><strong>Cybersecurity Audits:</strong> Complete penetration testing, vulnerability assessment, and compliance updates.</li>
+                </ul>
+              </div>
+
+              {/* Section 2: Digital Marketing Noida */}
+              <div className="p-8 rounded-2xl bg-white dark:bg-zinc-900 border border-gray-100 dark:border-zinc-800 shadow-sm">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-blue-600 dark:text-blue-400">
+                  Performance-Driven Digital Marketing in Noida: High ROI & First Page Google Rankings
+                </h3>
+                <p className="mb-4">
+                  Securing a competitive edge online requires a data-driven approach to marketing. Pro Base Solution crafts customized <strong>digital marketing in Noida</strong> and Noida Extension to help clinics, real estate projects, and service brands dominate search results. We combine Search Engine Optimization (SEO), Pay-Per-Click (PPC) ads, and high-impact Social Media Management (SMM) to generate high-intent inquiries.
+                </p>
+                <p className="mb-4">
+                  Our local SEO specialists focus on optimizing Google Business Profiles, citation management, and location page architectures. By targeting transactional keywords, we ensure you capture users at the exact moment they search. 
+                </p>
+                <div className="my-6 p-4 rounded-xl bg-purple-50/50 dark:bg-purple-900/10 border border-purple-200 dark:border-purple-800">
+                  <p className="text-center font-medium">
+                    <Link href="/digital-marketing-delhi" className="text-purple-600 dark:text-purple-400 hover:underline">
+                      “Looking for a digital marketing agency in Delhi?”
+                    </Link> We provide complete coverage across Noida, Greater Noida, Gurgaon, and Delhi NCR.
+                  </p>
+                </div>
+                <ul className="list-disc pl-5 space-y-2 text-sm text-gray-500">
+                  <li><strong>Search Engine Optimization:</strong> Structured data, target keyword optimization, and high-quality backlink building.</li>
+                  <li><strong>Paid Advertising Campaigns:</strong> ROI-driven Meta Ads and Google Search Network ad setups.</li>
+                  <li><strong>Social Media Engagement:</strong> Graphic design, reel planning, and brand positioning.</li>
+                </ul>
+              </div>
+
+              {/* Section 3: Web Dev NCR */}
+              <div className="p-8 rounded-2xl bg-white dark:bg-zinc-900 border border-gray-100 dark:border-zinc-800 shadow-sm">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-cyan-600 dark:text-cyan-400">
+                  Custom Web Dev in NCR: Building Fast, Secure & Mobile-Responsive Web Applications
+                </h3>
+                <p className="mb-4">
+                  A business website should function as a high-performing conversion machine. As a leading partner for <strong>web dev in NCR</strong>, we engineer blazing-fast, mobile-friendly websites that scale. We specialize in custom React.js, Next.js, and Node.js solutions, delivering clean interfaces that reduce bounce rates.
+                </p>
+                <p className="mb-4">
+                  From custom e-commerce checkouts to database management (PostgreSQL/MongoDB) and custom content management systems (CMS), we handle the complete design and coding. Our website development company in Noida Extension ensures your platform is optimized for accessibility, cross-browser compatibility, and speed.
+                </p>
+                <ul className="list-disc pl-5 space-y-2 text-sm text-gray-500">
+                  <li><strong>Custom Next.js & React Web Apps:</strong> Seamless user flows, high PageSpeed scores, and dynamic rendering.</li>
+                  <li><strong>E-Commerce Solutions:</strong> Custom shopping carts, secure checkout gates, and inventory catalog synchronization.</li>
+                  <li><strong>CMS & Blogs:</strong> User-friendly headless CMS integration for seamless content publishing.</li>
+                </ul>
+              </div>
+
+              {/* Section 4: Software Dev India */}
+              <div className="p-8 rounded-2xl bg-white dark:bg-zinc-900 border border-gray-100 dark:border-zinc-800 shadow-sm">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-indigo-600 dark:text-indigo-400">
+                  Custom Software Dev in India: CRM, ERP, and Scalable SaaS Engineering
+                </h3>
+                <p className="mb-4">
+                  As operations grow, ready-made software often limits flexibility. Pro Base Solution provides top-tier <strong>software dev in India</strong>, designing bespoke CRM portals, enterprise resource planning (ERP) suites, and cloud-native software products. We use robust agile methodologies, CI/CD pipelines, and thorough unit testing.
+                </p>
+                <p className="mb-4">
+                  Our custom software development company in Delhi NCR helps you automate legacy workflows, integrate third-party APIs, configure secure payment portals, and build real-time monitoring analytics panels. By leveraging modern technology, we ensure your software remains scalable for years to come.
+                </p>
+                <ul className="list-disc pl-5 space-y-2 text-sm text-gray-500">
+                  <li><strong>Custom CRM & ERP Portal Development:</strong> Employee, lead, and inventory trackers.</li>
+                  <li><strong>SaaS Product Engineering:</strong> Multi-tenant systems, subscription billing integrations, and API gateways.</li>
+                  <li><strong>Legacy System Modernization:</strong> Upgrading older codebases to cloud-ready microservice topologies.</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Quick Links for Programmatic SEO Pages */}
+            <div className="mt-16 p-8 rounded-3xl bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-950/20 dark:to-blue-950/20 border border-purple-100 dark:border-purple-900/50 max-w-5xl mx-auto">
+              <h4 className="text-lg font-bold mb-4 text-gray-950 dark:text-white text-center">Top Regional Services Pages</h4>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-center">
+                <Link href="/seo-company-delhi" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">SEO Company Delhi</Link>
+                <Link href="/ppc-agency-noida" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">PPC Agency Noida</Link>
+                <Link href="/crm-software-delhi" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">CRM Software Delhi</Link>
+                <Link href="/website-development-noida" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">Web Dev Noida</Link>
+                <Link href="/it-services-delhi" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">IT Services Delhi</Link>
+                <Link href="/seo-company-noida" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">SEO Company Noida</Link>
+                <Link href="/crm-software-noida" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">CRM Software Noida</Link>
+                <Link href="/it-services-noida" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">IT Services Noida</Link>
+              </div>
             </div>
           </div>
         </section>
