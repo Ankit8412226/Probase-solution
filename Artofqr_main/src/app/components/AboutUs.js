@@ -15,7 +15,7 @@ const stats = [
   { icon: Rocket, value: "1", label: "Growth Partner", color: "from-emerald-500 to-teal-500" }
 ];
 
-export default function AboutSection() {
+export default function AboutSection({ description }) {
   const router = useRouter();
 
   return (
@@ -102,7 +102,11 @@ export default function AboutSection() {
             </h2>
 
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-10 leading-relaxed font-medium">
-              <strong>{companyProfile.name}</strong> is a dedicated digital marketing and web development firm designed to help ambitious businesses capture more of their market. We fuse bespoke brand positioning with high-powered SEO, aggressive paid advertising, and conversion-optimized websites to construct a digital presence that refuses to be ignored.
+              {description || (
+                <>
+                  <strong>{companyProfile.name}</strong> is a dedicated digital marketing and web development firm designed to help ambitious businesses capture more of their market. We fuse bespoke brand positioning with high-powered SEO, aggressive paid advertising, and conversion-optimized websites to construct a digital presence that refuses to be ignored.
+                </>
+              )}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-5 items-center justify-center lg:justify-start">

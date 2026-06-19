@@ -5,8 +5,9 @@ import { AlertCircle, CheckCircle, Plus, Send } from "lucide-react";
 import { useState } from "react";
 import { faqItems } from "@/content/proBaseSolution";
 
-function FAQSection() {
+function FAQSection({ items }) {
   const [openIndex, setOpenIndex] = useState(null);
+  const displayItems = items || faqItems;
 
   return (
     <section className="relative w-full py-20 lg:py-32 overflow-hidden bg-gray-50/50 dark:bg-gray-900/50">
@@ -29,7 +30,7 @@ function FAQSection() {
             </motion.div>
 
             <div className="space-y-4">
-              {faqItems.map((item, index) => (
+              {displayItems.map((item, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 10 }}

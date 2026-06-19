@@ -214,13 +214,24 @@ export default function Home() {
               <h4 className="text-lg font-bold mb-4 text-gray-950 dark:text-white text-center">Top Regional Services Pages</h4>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-center">
                 <Link href="/seo-company-delhi" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">SEO Company Delhi</Link>
-                <Link href="/ppc-agency-noida" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">PPC Agency Noida</Link>
-                <Link href="/crm-software-delhi" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">CRM Software Delhi</Link>
                 <Link href="/website-development-noida" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">Web Dev Noida</Link>
-                <Link href="/it-services-delhi" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">IT Services Delhi</Link>
+                <Link href="/website-development-mumbai" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">Web Dev Mumbai</Link>
+                <Link href="/website-development-bengaluru" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">Web Dev Bengaluru</Link>
+                
                 <Link href="/seo-company-noida" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">SEO Company Noida</Link>
+                <Link href="/digital-marketing-gurgaon" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">Digital Marketing Gurgaon</Link>
+                <Link href="/seo-company-mumbai" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">SEO Company Mumbai</Link>
+                <Link href="/digital-marketing-bengaluru" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">Digital Marketing Bengaluru</Link>
+                
+                <Link href="/it-services-delhi" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">IT Services Delhi</Link>
                 <Link href="/crm-software-noida" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">CRM Software Noida</Link>
-                <Link href="/it-services-noida" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">IT Services Noida</Link>
+                <Link href="/seo-services-pune" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">SEO Services Pune</Link>
+                <Link href="/website-development-hyderabad" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">Web Dev Hyderabad</Link>
+
+                <Link href="/custom-software-delhi" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">Custom Software Delhi</Link>
+                <Link href="/digital-marketing-noida" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">Digital Marketing Noida</Link>
+                <Link href="/digital-marketing-pune" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">Digital Marketing Pune</Link>
+                <Link href="/it-services-hyderabad" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">IT Services Hyderabad</Link>
               </div>
             </div>
           </div>

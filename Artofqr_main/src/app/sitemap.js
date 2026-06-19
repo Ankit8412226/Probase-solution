@@ -1,5 +1,6 @@
 import { companyProfile, serviceCatalog } from "@/content/proBaseSolution";
 import cities from "@/data/cities.json";
+import { targetCities, targetServices } from "@/lib/seo-helper";
 
 export default function sitemap() {
   const baseUrl = companyProfile.website;
@@ -18,33 +19,11 @@ export default function sitemap() {
     ...serviceCatalog.map((service) => `/services/${service.slug}`),
   ];
 
-  // Primary NCR cities for Programmatic SEO pages
-  const targetCities = ["delhi", "noida", "gurgaon", "greater-noida", "noida-extension"];
-  
-  const targetServices = [
-    "seo-company",
-    "seo-services",
-    "website-development",
-    "web-dev",
-    "custom-software",
-    "software-development",
-    "crm-software",
-    "it-services",
-    "it-company",
-    "it-solutions",
-    "digital-marketing",
-    "ppc-agency",
-    "performance-marketing",
-    "ai-development-company",
-    "ai-solutions-provider",
-    "machine-learning-company",
-    "generative-ai-services",
-    "ai-voice-assistant"
-  ];
+  const targetServiceIds = targetServices.map((service) => service.id);
 
   const programmaticRoutes = [];
   targetCities.forEach((city) => {
-    targetServices.forEach((service) => {
+    targetServiceIds.forEach((service) => {
       programmaticRoutes.push(`/${service}-${city}`);
     });
   });

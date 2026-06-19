@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { companyProfile } from "@/content/proBaseSolution";
 
-const HeroSection = () => {
+const HeroSection = ({ badge, title, description }) => {
   const router = useRouter();
   const { scrollY } = useScroll();
   const scale = useTransform(scrollY, [0, 200], [1, 0.95]);
@@ -47,7 +47,7 @@ const HeroSection = () => {
             >
               <Sparkles size={16} className="text-purple-600 dark:text-purple-400" />
               <span className="text-sm font-medium text-gray-800 dark:text-gray-200">
-                {companyProfile.heroBadge}
+                {badge || companyProfile.heroBadge}
               </span>
             </motion.div>
 
@@ -55,18 +55,24 @@ const HeroSection = () => {
               className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white leading-[1.1] mb-6"
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
             >
-              Grow Local, <br />
-              <span className="bg-gradient-to-r from-indigo-600 via-violet-600 to-fuchsia-500 bg-clip-text text-transparent animate-gradient">
-                Build Digital Trust
-              </span> <br />
-              & Convert More Leads.
+              {title ? (
+                title
+              ) : (
+                <>
+                  Grow Local, <br />
+                  <span className="bg-gradient-to-r from-indigo-600 via-violet-600 to-fuchsia-500 bg-clip-text text-transparent animate-gradient">
+                    Build Digital Trust
+                  </span> <br />
+                  & Convert More Leads.
+                </>
+              )}
             </motion.h1>
 
             <motion.p
               className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed"
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
             >
-              {companyProfile.heroDescription}
+              {description || companyProfile.heroDescription}
             </motion.p>
 
             <motion.div

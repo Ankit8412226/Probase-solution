@@ -29,13 +29,14 @@ function FooterSection() {
       ],
     },
     {
-      title: "NCR Locations",
+      title: "Locations We Serve",
       links: [
-        { name: "IT Services Delhi", href: "/it-services-delhi" },
+        { name: "Web Dev Bengaluru", href: "/website-development-bengaluru" },
+        { name: "SEO Company Delhi", href: "/seo-company-delhi" },
         { name: "Digital Marketing Noida", href: "/digital-marketing-noida" },
-        { name: "Web Dev Gurgaon", href: "/website-development-gurgaon" },
-        { name: "AI Dev Noida Extension", href: "/ai-development-company-noida-extension" },
-        { name: "CRM Software Delhi", href: "/crm-software-delhi" },
+        { name: "Web Dev Mumbai", href: "/website-development-mumbai" },
+        { name: "IT Services Hyderabad", href: "/it-services-hyderabad" },
+        { name: "Digital Marketing Pune", href: "/digital-marketing-pune" },
       ],
     },
   ];

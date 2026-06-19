@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import { companyProfile } from "@/content/proBaseSolution";
 import { parseSeoSlug, formatCityName } from "@/lib/seo-helper";
 import Link from "next/link";
+import Script from "next/script";
 
 import Ecosystem from "../components/Ecosystem";
 import FooterSection from "../components/FooterSection";
@@ -140,13 +141,63 @@ export default async function LocationPage({ params }) {
 
   const { cityName, serviceName, category } = parsed;
 
+  // Localized metadata and variables
+  const heroBadge = `${serviceName} in ${cityName}`;
+  const heroTitle = `Top-Rated ${serviceName} Company in ${cityName}`;
+  const heroDescription = `Scale your business in ${cityName} with the best ${serviceName.toLowerCase()} partner. Pro Base Solution delivers custom software, fast websites, local SEO, and paid ad campaigns for healthcare, real estate, and retail brands.`;
+  const aboutDescription = `${companyProfile.name} is a dedicated ${serviceName.toLowerCase()} and web development agency serving ${cityName} and Delhi NCR. We align bespoke digital strategies, high-intent local SEO, and paid ad platforms to scale organic search traffic and customer inquiries for our local clients.`;
+
+  const localFaqs = [
+    {
+      question: `What services does your ${serviceName} company offer in ${cityName}?`,
+      answer: `As a leading ${serviceName.toLowerCase()} provider in ${cityName}, Pro Base Solution offers tailored solutions including custom software development, React/Next.js website design, local SEO campaigns, Meta & Google Ads, and full-funnel digital marketing targeted to the ${cityName} market.`
+    },
+    {
+      question: `How long does it take for ${serviceName} in ${cityName} to show results?`,
+      answer: `For marketing and search optimization (SEO), initial visibility improvements can be seen within 30 to 60 days, with first page keyword dominance taking 4-6 months. Development projects (custom software/web apps) take between 2 to 6 weeks based on specifications.`
+    },
+    {
+      question: `Do you work with small and medium businesses in ${cityName}?`,
+      answer: `Yes, we specialize in helping clinics, hospitals, real estate agencies, automobile showrooms, spa/wellness centers, and local brands in ${cityName} scale their digital presence, rank locally on Google Maps, and capture qualified leads.`
+    },
+    {
+      question: `How do I start a ${serviceName} project with you in ${cityName}?`,
+      answer: `Getting started is simple! Click the "Get Free Audit" or "Talk To Our Team" buttons to schedule a consultation. We will analyze your current digital presence and provide a customized strategy for your business in ${cityName}.`
+    }
+  ];
+
+  const localSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": `${companyProfile.website}/${location}#localbusiness`,
+    "name": `${companyProfile.name} - ${serviceName} ${cityName}`,
+    "image": `${companyProfile.website}/ProbaseLogo.jpeg`,
+    "url": `${companyProfile.website}/${location}`,
+    "telephone": companyProfile.phones[0],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": cityName,
+      "addressCountry": "IN"
+    },
+    "areaServed": [
+      { "@type": "City", "name": cityName },
+      { "@type": "Country", "name": "India" }
+    ],
+    "description": `Premium ${serviceName.toLowerCase()} and IT solutions provider in ${cityName} by Pro Base Solution. We specialize in custom software, SEO, and paid campaigns.`
+  };
+
   return (
     <main className="bg-white dark:bg-black selection:bg-purple-500/30">
+      <Script
+        id="local-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localSchema) }}
+      />
       <ProjectModal />
       <NavBar />
 
       <div className="pt-20">
-        <HeroSection />
+        <HeroSection badge={heroBadge} title={heroTitle} description={heroDescription} />
         <StatsSection />
       </div>
 
@@ -213,7 +264,7 @@ export default async function LocationPage({ params }) {
         </section>
 
         <ServicesSection />
-        <AboutUsSection />
+        <AboutUsSection description={aboutDescription} />
         <WhyChooseUsSection />
         
         <Project />
@@ -240,7 +291,7 @@ export default async function LocationPage({ params }) {
         <IndustriesSection />
         <PricingSection />
         <TestimonialsPage />
-        <FAQSection />
+        <FAQSection items={localFaqs} />
 
         {/* SEO Text Area & Linking Module */}
         <section className="py-12 px-6 rounded-2xl bg-zinc-50 dark:bg-zinc-950 border border-gray-200 dark:border-zinc-800">

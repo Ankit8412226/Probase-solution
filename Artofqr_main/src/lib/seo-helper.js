@@ -29,11 +29,22 @@ export const targetCities = [
   "noida-extension",
   "mumbai",
   "bengaluru",
+  "bangalore",
   "pune",
   "hyderabad",
   "chennai",
   "kolkata",
-  "ahmedabad"
+  "ahmedabad",
+  "jaipur",
+  "lucknow",
+  "chandigarh",
+  "indore",
+  "kochi",
+  "coimbatore",
+  "vadodara",
+  "nagpur",
+  "ghaziabad",
+  "faridabad"
 ];
 
 export function formatCityName(slug) {
