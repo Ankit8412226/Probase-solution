@@ -44,9 +44,19 @@ export default async function ServiceDetailPage({ params }) {
 
           <div className="relative mt-10 md:mt-12 max-w-full md:max-w-5xl mx-auto z-20 px-4">
             <img
-              src="/images/Rectangle_Web_Development.svg"
+              src={
+                data.slug === "website-development"
+                  ? "/images/service_website_dev.png"
+                  : data.slug === "seo"
+                  ? "/images/service_seo.png"
+                  : data.slug === "paid-advertising"
+                  ? "/images/hero_tech.png"
+                  : data.slug === "social-media-marketing"
+                  ? "/images/seo_marketing.png"
+                  : "/images/custom_software.png"
+              }
               alt={data.title}
-              className="rounded-2xl shadow-xl w-full"
+              className="rounded-2xl shadow-xl w-full max-h-[500px] object-cover"
             />
           </div>
         </div>
@@ -75,7 +85,13 @@ export default async function ServiceDetailPage({ params }) {
         <div className="container mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-start">
           <div className="relative rounded-3xl overflow-hidden shadow-xl bg-white/80 dark:bg-gray-900/40 border border-gray-200 dark:border-gray-800 h-[520px]">
             <img
-              src="/images/Why choose us.png"
+              src={
+                data.slug === "seo"
+                  ? "/images/service_seo.png"
+                  : data.slug === "website-development"
+                  ? "/images/service_website_dev.png"
+                  : "/images/custom_software.png"
+              }
               alt={`${data.title} service visual`}
               className="w-full h-full object-cover"
             />

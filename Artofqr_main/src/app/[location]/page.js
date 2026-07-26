@@ -5,6 +5,7 @@ import { parseSeoSlug, formatCityName } from "@/lib/seo-helper";
 import Link from "next/link";
 import Script from "next/script";
 
+import Breadcrumb from "../components/Breadcrumb";
 import Ecosystem from "../components/Ecosystem";
 import FooterSection from "../components/FooterSection";
 import HeroSection from "../components/HeroSection";
@@ -197,6 +198,7 @@ export default async function LocationPage({ params }) {
       <NavBar />
 
       <div className="pt-20">
+        <Breadcrumb items={[{ label: "Services", href: "/services" }, { label: `${serviceName} in ${cityName}`, href: `/${location}` }]} />
         <HeroSection badge={heroBadge} title={heroTitle} description={heroDescription} />
         <StatsSection />
       </div>

@@ -22,9 +22,10 @@ function FooterSection() {
     {
       title: "Resources",
       links: [
-        { name: "Case Studies", href: "/portfolio" },
-        { name: "About us", href: "/industries" },
-        { name: "Contact", href: "/contact" },
+        { name: "Case Studies", href: "/case-studies" },
+        { name: "Blog & Insights", href: "/insights" },
+        { name: "About us", href: "/about" },
+        { name: "Contact Us", href: "/contact" },
         { name: "All Services", href: "/services" },
       ],
     },

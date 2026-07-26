@@ -16,7 +16,7 @@ const HeroSection = ({ badge, title, description }) => {
   const handleDiscover = () => router.push("/services");
 
   // right-side blue hero image (local)
-  const heroImg = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop";
+  const heroImg = "/images/hero_tech.png";
 
   return (
     <section id="hero" className="relative w-full overflow-hidden pt-8 md:pt-12 pb-12 md:pb-16 lg:pb-20">

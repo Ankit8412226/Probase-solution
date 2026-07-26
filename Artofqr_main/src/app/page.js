@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import Script from "next/script";
 import Ecosystem from "./components/Ecosystem";
 import FooterSection from "./components/FooterSection";
 import HeroSection from "./components/HeroSection";
@@ -73,8 +74,43 @@ const FAQSection = dynamic(() => import("./components/Faq"));
 const Project = dynamic(() => import("./components/Project"));
 
 export default function Home() {
+  const homeSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${companyProfile.website}/#organization`,
+        "name": companyProfile.name,
+        "url": companyProfile.website,
+        "logo": `${companyProfile.website}/ProbaseLogo.jpeg`,
+        "sameAs": [
+          "https://www.linkedin.com/company/probasesolution",
+          "https://www.instagram.com/probasesolution",
+          "https://www.facebook.com/probasesolution"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": companyProfile.phones[0],
+          "contactType": "customer service"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${companyProfile.website}/#website`,
+        "url": companyProfile.website,
+        "name": companyProfile.name,
+        "publisher": { "@id": `${companyProfile.website}/#organization` }
+      }
+    ]
+  };
+
   return (
     <main className="bg-white dark:bg-black selection:bg-purple-500/30">
+      <Script
+        id="home-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }}
+      />
       <NavBar />
 
       <div className="pt-20">

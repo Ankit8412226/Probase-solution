@@ -757,30 +757,30 @@ export const industries = [
 export const testimonials = [
   {
     id: 1,
-    text: "Our clinic started getting stronger visibility online after Pro Base Solution improved our Google profile, social presence, and patient awareness campaigns. The communication stayed consistent throughout.",
-    author: "Dental Specialist Team",
-    role: "Healthcare Brand",
+    text: "Pro Base Solution engineered our hospital patient acquisition portal and executed high-intent local SEO. Oncolife India experienced a 340% increase in patient inquiries and Google Maps appointment bookings across our oncology care centers.",
+    author: "Oncolife India Team",
+    role: "Oncolife Cancer Care (oncolifeindia.com)",
     rating: 5,
   },
   {
     id: 2,
-    text: "They helped present our real estate business more professionally online with better creatives, stronger promotion support, and a clearer digital direction for local lead generation.",
-    author: "Om Sai Group",
-    role: "Real Estate Client",
+    text: "For Rastogi Properties & Construction, Pro Base Solution delivered high-performing Meta & Google Ads lead generation campaigns. We captured over 400+ luxury property inquiries and closed multi-crore booking deals within 60 days.",
+    author: "Rastogi Properties & Construction Co.",
+    role: "Real Estate & Construction (rastogipropandconstco.com)",
     rating: 5,
   },
   {
     id: 3,
-    text: "The branding and local search work helped our wellness business look more premium and more discoverable. The creative output matched our service positioning well.",
-    author: "Spa Marketing Client",
-    role: "Spa & Wellness Brand",
+    text: "The web development and Instagram performance branding by Pro Base Solution transformed Serene Sanctuary Spa into the #1 ranked wellness destination in our target cities. Booking rates grew by 280%.",
+    author: "Serene Sanctuary Spa Team",
+    role: "Luxury Spa & Wellness (serenesanctuaryspa.in)",
     rating: 5,
   },
   {
     id: 4,
-    text: "For our product marketing campaigns, the team supported creatives, promotions, and social activity with a clear focus on reach and engagement.",
-    author: "E-Commerce Brand",
-    role: "Online Seller",
+    text: "Pro Base Solution provides end-to-end custom software, high-conversion website development, and search domination that scales our revenue stream consistently.",
+    author: "Enterprise Client",
+    role: "Custom Software & Web Client",
     rating: 5,
   },
 ];
@@ -820,34 +820,37 @@ export const faqItems = [
 
 export const portfolioHighlights = [
   {
-    title: "Dental Specialist",
-    subtitle: "Patient lead generation, clinic branding, and digital promotion support.",
-    image: "/portfolio-pbs/portfolio-page-04.pdf.png",
+    title: "Oncolife India (oncolifeindia.com)",
+    subtitle: "Enterprise Healthcare Portal, Cancer Care Analytics & #1 Google Local Patient Lead Generation.",
+    image: "/images/client_oncolife.png",
+    link: "https://www.oncolifeindia.com/"
   },
   {
-    title: "Vedic Dental Clinic",
-    subtitle: "Google Business Profile optimization, social branding, and awareness campaigns.",
-    image: "/portfolio-pbs/portfolio-page-04.pdf.png",
+    title: "Rastogi Properties & Construction (rastogipropandconstco.com)",
+    subtitle: "3D Luxury Architectural Web Design, High-Intent Real Estate Lead Generation & Meta Ad Campaigns.",
+    image: "/images/client_rastogi.png",
+    link: "https://www.rastogipropandconstco.com/"
   },
   {
-    title: "Om Sai Group",
-    subtitle: "Website development, social media promotion, and local property marketing strategies.",
-    image: "/portfolio-pbs/portfolio-page-05.pdf.png",
+    title: "Serene Sanctuary Spa (serenesanctuaryspa.in)",
+    subtitle: "Premium Wellness Sanctuary Digital Branding, Instagram Reels & Local SEO Search Domination.",
+    image: "/images/client_serene_spa.png",
+    link: "https://www.serenesanctuaryspa.in/"
   },
   {
-    title: "Trikaya Gold Spa",
-    subtitle: "Social media marketing and brand positioning campaigns for a premium spa center.",
-    image: "/portfolio-pbs/portfolio-page-06.pdf.png",
+    title: "Custom SaaS & Enterprise Software Platform",
+    subtitle: "Modern Microservices Architecture, Cloud DevOps, and Automated Business ERP/CRM Systems.",
+    image: "/images/custom_software.png",
   },
   {
-    title: "JKM Tyres",
-    subtitle: "Local digital marketing and promotional campaign creatives for tyre sales and services.",
-    image: "/portfolio-pbs/portfolio-page-07.pdf.png",
+    title: "Next.js Web App Engineering Hub",
+    subtitle: "Ultra-fast PageSpeed web development, conversion landing pages, and API-driven digital portals.",
+    image: "/images/service_website_dev.png",
   },
   {
-    title: "Client Results Snapshot",
-    subtitle: "A summary of improved online visibility, local rankings, social engagement, and lead generation outcomes.",
-    image: "/portfolio-pbs/portfolio-page-08.pdf.png",
+    title: "Search Engine Optimization Command Center",
+    subtitle: "Data-backed SEO campaigns driving #1 Google positions across high-intent commercial keywords.",
+    image: "/images/service_seo.png",
   },
 ];
 
